@@ -1,0 +1,3834 @@
+<?xml version="1.0" encoding="iso-8859-1" ?><?xml-stylesheet type="text/xsl" href="C:\Program Files (x86)\National Instruments\TestStand 2022\Components\Models\TestStandModels\ATML\StyleSheets\tr5_horizontal.xsl"?>
+
+<trc:TestResultsCollection xmlns:trc="urn:IEEE-1636.1:2011:01:TestResultsCollection" xmlns:tr="urn:IEEE-1636.1:2011:01:TestResults" xmlns:c="urn:IEEE-1671:2010:Common" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ts="www.ni.com/TestStand/ATMLTestResults/2.0">
+<trc:TestResults uuid="4846b1ee-fdc7-11ee-844b-dc4a3e66df51" xmlns:trc="urn:IEEE-1636.1:2011:01:TestResultsCollection" xmlns:tr="urn:IEEE-1636.1:2011:01:TestResults" xmlns:c="urn:IEEE-1671:2010:Common" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ts="www.ni.com/TestStand/ATMLTestResults/2.0">
+	<tr:Personnel>
+		<tr:SystemOperator ID = "administrator" name = "administrator"/>
+	</tr:Personnel>
+	<tr:ResultSet ID="18534" name = "C:\Elatch-Bench-Test\Sequence\Elatch-bench.seq#MainSequence" startDateTime = "2024-04-18T15:04:08.760" endDateTime = "2024-04-18T15:04:45.695">
+		<tr:Extension>
+			<ts:TSStepProperties>
+				<ts:StepType>SequenceCall</ts:StepType>
+				<ts:StepGroup>Main</ts:StepGroup>
+				<ts:BlockLevel value='1'/>
+				<ts:Index value='10'/>
+				<ts:TotalTime value='36.9352'/>
+				<ts:ModuleTime value='36.9351'/>
+			</ts:TSStepProperties>
+		</tr:Extension>
+		<tr:Outcome value="Passed" />
+		<tr:SessionAction ID = "18535" name = "Close DAQ Short" startDateTime = "2024-04-18T15:04:08.857"  endDateTime = "2024-04-18T15:04:08.863"  testReferenceID="ID#:21u+zFfs7hGEP9xKPmbfUB">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>Action</ts:StepType>
+					<ts:StepGroup>Setup</ts:StepGroup>
+					<ts:BlockLevel value='0'/>
+					<ts:Index value='4'/>
+					<ts:TotalTime value='0.0061241'/>
+					<ts:ModuleTime value='0.0060869'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "18536" name = "DAQ Resistor Open" startDateTime = "2024-04-18T15:04:08.882"  endDateTime = "2024-04-18T15:04:08.889"  testReferenceID="ID#:gG5ctk/s7hGEP9xKPmbfUB">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>Action</ts:StepType>
+					<ts:StepGroup>Setup</ts:StepGroup>
+					<ts:BlockLevel value='0'/>
+					<ts:Index value='5'/>
+					<ts:TotalTime value='0.0065313'/>
+					<ts:ModuleTime value='0.0064888'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:TestGroup name="C:\Elatch-Bench-Test\Sequence\Elatch-bench.seq#PS_SetVoltage" ID="18537" callerName='UUT_PowerON' testReferenceID="ID#:WRYWxXuF7hGEH9xKPmbfUB" startDateTime = "2024-04-18T15:04:08.967"  endDateTime = "2024-04-18T15:04:10.066" >
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>SequenceCall</ts:StepType>
+					<ts:StepGroup>Setup</ts:StepGroup>
+					<ts:BlockLevel value='0'/>
+					<ts:Index value='9'/>
+					<ts:TotalTime value='1.09813'/>
+					<ts:ModuleTime value='1.09807'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value="Passed" />
+			<tr:SessionAction ID = "18538" name = "Set_Power_Supply" startDateTime = "2024-04-18T15:04:08.990"  endDateTime = "2024-04-18T15:04:09.012"  testReferenceID="ID#:CMfbjZJu7hGlWmCl4mG1lD">
+				<tr:Extension>
+					<ts:TSStepProperties>
+						<ts:StepType>Action</ts:StepType>
+						<ts:StepGroup>Main</ts:StepGroup>
+						<ts:BlockLevel value='0'/>
+						<ts:Index value='0'/>
+						<ts:TotalTime value='0.0227958'/>
+						<ts:ModuleTime value='0.0227374'/>
+					</ts:TSStepProperties>
+				</tr:Extension>
+				<tr:ActionOutcome value = "Done" />
+			</tr:SessionAction>
+			<tr:SessionAction ID = "18539" name = "Wait" startDateTime = "2024-04-18T15:04:09.017"  endDateTime = "2024-04-18T15:04:10.018"  testReferenceID="ID#:h7OOdoxv7hGlZWCl4mG1lD">
+				<tr:Extension>
+					<ts:TSStepProperties>
+						<ts:StepType>NI_Wait</ts:StepType>
+						<ts:StepGroup>Main</ts:StepGroup>
+						<ts:BlockLevel value='0'/>
+						<ts:Index value='1'/>
+						<ts:TotalTime value='1.00145'/>
+					</ts:TSStepProperties>
+				</tr:Extension>
+				<tr:ActionOutcome value = "Done" />
+			</tr:SessionAction>
+			<tr:Test ID = "18540" name = "Voltage_Validation" startDateTime = "2024-04-18T15:04:10.024"  endDateTime = "2024-04-18T15:04:10.062"  testReferenceID="ID#:fI3Cd4pv7hGlZWCl4mG1lD">
+				<tr:Extension>
+					<ts:TSStepProperties>
+						<ts:StepType>NumericLimitTest</ts:StepType>
+						<ts:StepGroup>Main</ts:StepGroup>
+						<ts:BlockLevel value='0'/>
+						<ts:Index value='2'/>
+						<ts:TotalTime value='0.0376721'/>
+						<ts:ModuleTime value='0.0375109'/>
+					</ts:TSStepProperties>
+				</tr:Extension>
+				<tr:Outcome value = "Passed" />
+				<tr:TestResult ID = "tr-4846b101-fdc7-11ee-844b-dc4a3e66df51" name = "Numeric">
+					<tr:TestData>
+						<c:Datum value = "7.995" xsi:type="ts:TS_double" nonStandardUnit="V" flags = "0x2400"/>
+					</tr:TestData>
+					<tr:TestLimits>
+						<tr:Limits>
+							<c:LimitPair operator = "AND">
+								<c:Limit comparator = "GE">
+									<c:Datum nonStandardUnit = "V" value = "7.8" xsi:type="ts:TS_double" flags = "0x0000"/>
+								</c:Limit>
+								<c:Limit comparator = "LE">
+									<c:Datum nonStandardUnit = "V" value = "8.2" xsi:type="ts:TS_double" flags = "0x0000"/>
+								</c:Limit>
+							</c:LimitPair>
+							<c:Extension>
+								<ts:TSLimitProperties>
+									<ts:RawLimits>
+										<ts:Low value = "7.8" xsi:type="c:double" />
+										<ts:High value = "8.2" xsi:type="c:double" />
+									</ts:RawLimits>
+								</ts:TSLimitProperties>
+							</c:Extension>
+						</tr:Limits>
+					</tr:TestLimits>
+				</tr:TestResult>
+			</tr:Test>
+		</tr:TestGroup>
+		<tr:Test ID = "18541" name = "Current_Validation" startDateTime = "2024-04-18T15:04:10.094"  endDateTime = "2024-04-18T15:04:10.094"  testReferenceID="ID#:6e0cYHqQ7hGEJtxKPmbfUB">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NumericLimitTest</ts:StepType>
+					<ts:StepGroup>Setup</ts:StepGroup>
+					<ts:BlockLevel value='0'/>
+					<ts:Index value='10'/>
+					<ts:LoopingProperties>
+						<ts:NumLoops value='0' xsi:type='c:double'/>
+						<ts:NumPassed value='0' xsi:type='c:double'/>
+						<ts:NumFailed value='0' xsi:type='c:double'/>
+						<ts:EndingLoopIndex value='0' xsi:type='c:double'/>
+					</ts:LoopingProperties>
+					<ts:TotalTime value='1.71e-05'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "UserDefined" qualifier= "Skipped" />
+		</tr:Test>
+		<tr:Test ID = "18542" name = "Test Brose EOL Ext Session" startDateTime = "2024-04-18T15:04:10.100"  endDateTime = "2024-04-18T15:04:10.116"  testReferenceID="ID#:bCXmh4mF7hGEH9xKPmbfUB">
+			<tr:Parameters>
+			<tr:Parameter ID = 'p-4846b103-fdc7-11ee-844b-dc4a3e66df51' name = 'CAN Command'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>021061</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			<tr:Parameter ID = 'p-4846b104-fdc7-11ee-844b-dc4a3e66df51' name = 'ID Response'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DAF254</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			<tr:Parameter ID = 'p-4846b105-fdc7-11ee-844b-dc4a3e66df51' name = 'ID Request'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DA54F2</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			</tr:Parameters>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>StringValueTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='0'/>
+					<ts:Index value='0'/>
+					<ts:TotalTime value='0.0162078'/>
+					<ts:ModuleTime value='0.0161553'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-4846b102-fdc7-11ee-844b-dc4a3e66df51" name = "String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2400">
+						<c:Value>065061003201F4</c:Value>
+					</c:Datum>
+				</tr:TestData>
+				<tr:TestLimits>
+					<tr:Limits>
+						<c:Expected comparator = "CIEQ">
+							<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+								<c:Value>065061003201F4</c:Value>
+							</c:Datum>
+						</c:Expected>
+					</tr:Limits>
+				</tr:TestLimits>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b106-fdc7-11ee-844b-dc4a3e66df51" name = "ID String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DAF254</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b107-fdc7-11ee-844b-dc4a3e66df51" name = "Data String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>065061003201F4</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b108-fdc7-11ee-844b-dc4a3e66df51" name = "Timestamp">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>4/18/2024 3:04:10.134 PM</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:Test ID = "18543" name = "Test Request Seed" startDateTime = "2024-04-18T15:04:10.118"  endDateTime = "2024-04-18T15:04:10.140"  testReferenceID="ID#:bCLM4WLs7hGEQNxKPmbfUB">
+			<tr:Parameters>
+			<tr:Parameter ID = 'p-4846b10a-fdc7-11ee-844b-dc4a3e66df51' name = 'CAN Command'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>0227710000000000</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			<tr:Parameter ID = 'p-4846b10b-fdc7-11ee-844b-dc4a3e66df51' name = 'ID Response'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DAF254</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			<tr:Parameter ID = 'p-4846b10c-fdc7-11ee-844b-dc4a3e66df51' name = 'ID Request'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DA54F2</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			</tr:Parameters>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>StringValueTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='0'/>
+					<ts:Index value='1'/>
+					<ts:TotalTime value='0.0222782'/>
+					<ts:ModuleTime value='0.0222133'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-4846b109-fdc7-11ee-844b-dc4a3e66df51" name = "String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2400">
+						<c:Value>037F2713</c:Value>
+					</c:Datum>
+				</tr:TestData>
+				<tr:Extension>
+					<ts:TSLimitProperties>
+						<ts:IsComparisonTypeLog value = 'true'/>
+					</ts:TSLimitProperties>
+				</tr:Extension>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b10d-fdc7-11ee-844b-dc4a3e66df51" name = "ID String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DAF254</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b10e-fdc7-11ee-844b-dc4a3e66df51" name = "Data String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>037F2713</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b10f-fdc7-11ee-844b-dc4a3e66df51" name = "Timestamp">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>4/18/2024 3:04:10.156 PM</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:Test ID = "18544" name = "Test NTC Measurement" startDateTime = "2024-04-18T15:04:10.142"  endDateTime = "2024-04-18T15:04:10.153"  testReferenceID="ID#:2ETcRDOY7hGEJ9xKPmbfUB">
+			<tr:Parameters>
+			<tr:Parameter ID = 'p-4846b111-fdc7-11ee-844b-dc4a3e66df51' name = 'CAN Command'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>053101FE3206</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			<tr:Parameter ID = 'p-4846b112-fdc7-11ee-844b-dc4a3e66df51' name = 'ID Response'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DAF254</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			<tr:Parameter ID = 'p-4846b113-fdc7-11ee-844b-dc4a3e66df51' name = 'ID Request'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DA54F2</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			</tr:Parameters>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>StringValueTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='0'/>
+					<ts:Index value='2'/>
+					<ts:TotalTime value='0.0112916'/>
+					<ts:ModuleTime value='0.0112093'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-4846b110-fdc7-11ee-844b-dc4a3e66df51" name = "String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2400">
+						<c:Value>037F2713</c:Value>
+					</c:Datum>
+				</tr:TestData>
+				<tr:Extension>
+					<ts:TSLimitProperties>
+						<ts:IsComparisonTypeLog value = 'true'/>
+					</ts:TSLimitProperties>
+				</tr:Extension>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b114-fdc7-11ee-844b-dc4a3e66df51" name = "ID String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DAF254</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b115-fdc7-11ee-844b-dc4a3e66df51" name = "Data String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>000B7101FE3206067500000000FFFFFF</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b116-fdc7-11ee-844b-dc4a3e66df51" name = "Timestamp">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>4/18/2024 3:04:10.171 PM</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:SessionAction ID = "18545" name = "NTC Convertor" startDateTime = "2024-04-18T15:04:10.155"  endDateTime = "2024-04-18T15:04:10.160"  testReferenceID="ID#:pZjEMES57hGENNxKPmbfUB">
+			<tr:Parameters>
+			<tr:Parameter ID = 'p-4846b117-fdc7-11ee-844b-dc4a3e66df51' name = 'Measurement'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>000B7101FE3206067500000000FFFFFF</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			</tr:Parameters>
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "Value">
+						<c:Datum value = "1653" xsi:type="ts:TS_double" flags = "0x2000"/>
+					</c:Item>
+					<c:Item name = "Temp">
+						<c:Datum value = "27.87585736173" xsi:type="ts:TS_double" flags = "0x2000"/>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>Action</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='0'/>
+					<ts:Index value='3'/>
+					<ts:TotalTime value='0.004352'/>
+					<ts:ModuleTime value='0.0043265'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "18546" name = "If" startDateTime = "2024-04-18T15:04:10.161"  endDateTime = "2024-04-18T15:04:10.161"  testReferenceID="ID#:4L2TU7P97hGES9xKPmbfUB">
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "ReportText">
+						<c:Datum xsi:type="ts:TS_string" flags = "0x400000">
+							<c:Value>{True}</c:Value>
+						</c:Datum>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Flow_If</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='0'/>
+					<ts:Index value='4'/>
+					<ts:TotalTime value='6.31e-05'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:Test ID = "18547" name = "Test Verify SW Version" startDateTime = "2024-04-18T15:04:10.164"  endDateTime = "2024-04-18T15:04:10.180"  testReferenceID="ID#:/wqeb56F7hGEH9xKPmbfUB">
+			<tr:Parameters>
+			<tr:Parameter ID = 'p-4846b119-fdc7-11ee-844b-dc4a3e66df51' name = 'CAN Command'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>0322FD22</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			<tr:Parameter ID = 'p-4846b11a-fdc7-11ee-844b-dc4a3e66df51' name = 'ID Response'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DAF254</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			<tr:Parameter ID = 'p-4846b11b-fdc7-11ee-844b-dc4a3e66df51' name = 'ID Request'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DA54F2</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			</tr:Parameters>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>StringValueTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='5'/>
+					<ts:TotalTime value='0.0157121'/>
+					<ts:ModuleTime value='0.0156549'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-4846b118-fdc7-11ee-844b-dc4a3e66df51" name = "String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2400">
+						<c:Value>000A62FD22B41069FFFFFFFF</c:Value>
+					</c:Datum>
+				</tr:TestData>
+				<tr:TestLimits>
+					<tr:Limits>
+						<c:Expected comparator = "CIEQ">
+							<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+								<c:Value>000A62FD22B41069FFFFFFFF</c:Value>
+							</c:Datum>
+						</c:Expected>
+					</tr:Limits>
+				</tr:TestLimits>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b11c-fdc7-11ee-844b-dc4a3e66df51" name = "ID String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DAF254</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b11d-fdc7-11ee-844b-dc4a3e66df51" name = "Data String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>000A62FD22B41069FFFFFFFF</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b11e-fdc7-11ee-844b-dc4a3e66df51" name = "Timestamp">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>4/18/2024 3:04:10.196 PM</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:Test ID = "18548" name = "Verify SW Version String" startDateTime = "2024-04-18T15:04:10.182"  endDateTime = "2024-04-18T15:04:10.182"  testReferenceID="ID#:c8mMnDDB7hGEN9xKPmbfUB">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>StringValueTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='6'/>
+					<ts:TotalTime value='0.0002314'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "UserDefined" qualifier= "Skipped" />
+		</tr:Test>
+		<tr:Test ID = "18549" name = "Test Verify ECU ID" startDateTime = "2024-04-18T15:04:10.185"  endDateTime = "2024-04-18T15:04:10.199"  testReferenceID="ID#:RvSYo56F7hGEH9xKPmbfUB">
+			<tr:Parameters>
+			<tr:Parameter ID = 'p-4846b120-fdc7-11ee-844b-dc4a3e66df51' name = 'CAN Command'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>0322FD28</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			</tr:Parameters>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>StringValueTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='7'/>
+					<ts:TotalTime value='0.0143053'/>
+					<ts:ModuleTime value='0.0142603'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-4846b11f-fdc7-11ee-844b-dc4a3e66df51" name = "String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2400">
+						<c:Value>003362FD28011809004156494E4254B41069FFFFFFFF00000000000000000047353939363730312000000000000000000000000000FFFFFFFFFFFFFFFFFFFFFF</c:Value>
+					</c:Datum>
+				</tr:TestData>
+				<tr:TestLimits>
+					<tr:Limits>
+						<c:Expected comparator = "CIEQ">
+							<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+								<c:Value>003362FD28011809004156494E4254B41069FFFFFFFF00000000000000000047353939363730312000000000000000000000000000FFFFFFFFFFFFFFFFFFFFFF</c:Value>
+							</c:Datum>
+						</c:Expected>
+					</tr:Limits>
+				</tr:TestLimits>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b121-fdc7-11ee-844b-dc4a3e66df51" name = "ID String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DAF254</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b122-fdc7-11ee-844b-dc4a3e66df51" name = "Data String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>003362FD28011809004156494E4254B41069FFFFFFFF00000000000000000047353939363730312000000000000000000000000000FFFFFFFFFFFFFFFFFFFFFF</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b123-fdc7-11ee-844b-dc4a3e66df51" name = "Timestamp">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>4/18/2024 3:04:10.217 PM</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:Test ID = "18550" name = "Test Read Data By ID" startDateTime = "2024-04-18T15:04:10.201"  endDateTime = "2024-04-18T15:04:10.218"  testReferenceID="ID#:AGqn8J6F7hGEH9xKPmbfUB">
+			<tr:Parameters>
+			<tr:Parameter ID = 'p-4846b125-fdc7-11ee-844b-dc4a3e66df51' name = 'CAN Command'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>0322FD40</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			</tr:Parameters>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>StringValueTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='8'/>
+					<ts:TotalTime value='0.0174224'/>
+					<ts:ModuleTime value='0.017363'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-4846b124-fdc7-11ee-844b-dc4a3e66df51" name = "String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2400">
+						<c:Value>002B62FD4000000000000000000000000000000000000000000000000000000000000000000000000000000000FFFFFF</c:Value>
+					</c:Datum>
+				</tr:TestData>
+				<tr:TestLimits>
+					<tr:Limits>
+						<c:Expected comparator = "CIEQ">
+							<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+								<c:Value>002B62FD4000000000000000000000000000000000000000000000000000000000000000000000000000000000FFFFFF</c:Value>
+							</c:Datum>
+						</c:Expected>
+					</tr:Limits>
+				</tr:TestLimits>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b126-fdc7-11ee-844b-dc4a3e66df51" name = "ID String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DAF254</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b127-fdc7-11ee-844b-dc4a3e66df51" name = "Data String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>002B62FD4000000000000000000000000000000000000000000000000000000000000000000000000000000000FFFFFF</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b128-fdc7-11ee-844b-dc4a3e66df51" name = "Timestamp">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>4/18/2024 3:04:10.237 PM</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:Test ID = "18551" name = "Wake Current Measurement" startDateTime = "2024-04-18T15:04:10.220"  endDateTime = "2024-04-18T15:04:10.244"  testReferenceID="ID#:KCNeD+Cd7hGELtxKPmbfUB">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NumericLimitTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='9'/>
+					<ts:TotalTime value='0.0243313'/>
+					<ts:ModuleTime value='0.0242739'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-4846b129-fdc7-11ee-844b-dc4a3e66df51" name = "Numeric">
+				<tr:TestData>
+					<c:Datum value = "0.0568" xsi:type="ts:TS_double" nonStandardUnit="I" flags = "0x2400"/>
+				</tr:TestData>
+				<tr:TestLimits>
+					<tr:Limits>
+						<c:LimitPair operator = "AND">
+							<c:Limit comparator = "GE">
+								<c:Datum nonStandardUnit = "I" value = "0.03" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+							<c:Limit comparator = "LE">
+								<c:Datum nonStandardUnit = "I" value = "0.07" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+						</c:LimitPair>
+						<c:Extension>
+							<ts:TSLimitProperties>
+								<ts:RawLimits>
+									<ts:Low value = "0.03" xsi:type="c:double" />
+									<ts:High value = "0.07" xsi:type="c:double" />
+								</ts:RawLimits>
+							</ts:TSLimitProperties>
+						</c:Extension>
+					</tr:Limits>
+				</tr:TestLimits>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:Test ID = "18552" name = "Test Self BIST" startDateTime = "2024-04-18T15:04:10.247"  endDateTime = "2024-04-18T15:04:10.265"  testReferenceID="ID#:eGxYHZ+F7hGEH9xKPmbfUB">
+			<tr:Parameters>
+			<tr:Parameter ID = 'p-4846b12b-fdc7-11ee-844b-dc4a3e66df51' name = 'CAN Command'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>063101FE2A0000</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			</tr:Parameters>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>StringValueTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='10'/>
+					<ts:TotalTime value='0.017685'/>
+					<ts:ModuleTime value='0.0176075'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-4846b12a-fdc7-11ee-844b-dc4a3e66df51" name = "String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2400">
+						<c:Value>067101FE2AAAFF</c:Value>
+					</c:Datum>
+				</tr:TestData>
+				<tr:TestLimits>
+					<tr:Limits>
+						<c:Expected comparator = "CIEQ">
+							<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+								<c:Value>067101FE2AAAFF</c:Value>
+							</c:Datum>
+						</c:Expected>
+					</tr:Limits>
+				</tr:TestLimits>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b12c-fdc7-11ee-844b-dc4a3e66df51" name = "ID String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DAF254</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b12d-fdc7-11ee-844b-dc4a3e66df51" name = "Data String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>067101FE2AAAFF</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b12e-fdc7-11ee-844b-dc4a3e66df51" name = "Timestamp">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>4/18/2024 3:04:10.281 PM</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:SessionAction ID = "18553" name = "Wait" startDateTime = "2024-04-18T15:04:10.267"  endDateTime = "2024-04-18T15:04:10.367"  testReferenceID="ID#:XY9RCmO17hGENNxKPmbfUB">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Wait</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='11'/>
+					<ts:TotalTime value='0.100142'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:TestGroup name="C:\Elatch-Bench-Test\Sequence\Elatch-bench.seq#PS_SetVoltage" ID="18554" callerName='Set 12V' testReferenceID="ID#:/6u68cSF7hGEIdxKPmbfUB" startDateTime = "2024-04-18T15:04:10.368"  endDateTime = "2024-04-18T15:04:11.438" >
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>SequenceCall</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='12'/>
+					<ts:TotalTime value='1.06951'/>
+					<ts:ModuleTime value='1.06947'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value="Passed" />
+			<tr:SessionAction ID = "18555" name = "Set_Power_Supply" startDateTime = "2024-04-18T15:04:10.392"  endDateTime = "2024-04-18T15:04:10.411"  testReferenceID="ID#:CMfbjZJu7hGlWmCl4mG1lD">
+				<tr:Extension>
+					<ts:TSStepProperties>
+						<ts:StepType>Action</ts:StepType>
+						<ts:StepGroup>Main</ts:StepGroup>
+						<ts:BlockLevel value='0'/>
+						<ts:Index value='0'/>
+						<ts:TotalTime value='0.0185253'/>
+						<ts:ModuleTime value='0.0184953'/>
+					</ts:TSStepProperties>
+				</tr:Extension>
+				<tr:ActionOutcome value = "Done" />
+			</tr:SessionAction>
+			<tr:SessionAction ID = "18556" name = "Wait" startDateTime = "2024-04-18T15:04:10.413"  endDateTime = "2024-04-18T15:04:11.414"  testReferenceID="ID#:h7OOdoxv7hGlZWCl4mG1lD">
+				<tr:Extension>
+					<ts:TSStepProperties>
+						<ts:StepType>NI_Wait</ts:StepType>
+						<ts:StepGroup>Main</ts:StepGroup>
+						<ts:BlockLevel value='0'/>
+						<ts:Index value='1'/>
+						<ts:TotalTime value='1.00089'/>
+					</ts:TSStepProperties>
+				</tr:Extension>
+				<tr:ActionOutcome value = "Done" />
+			</tr:SessionAction>
+			<tr:Test ID = "18557" name = "Voltage_Validation" startDateTime = "2024-04-18T15:04:11.415"  endDateTime = "2024-04-18T15:04:11.436"  testReferenceID="ID#:fI3Cd4pv7hGlZWCl4mG1lD">
+				<tr:Extension>
+					<ts:TSStepProperties>
+						<ts:StepType>NumericLimitTest</ts:StepType>
+						<ts:StepGroup>Main</ts:StepGroup>
+						<ts:BlockLevel value='0'/>
+						<ts:Index value='2'/>
+						<ts:TotalTime value='0.0203431'/>
+						<ts:ModuleTime value='0.0202673'/>
+					</ts:TSStepProperties>
+				</tr:Extension>
+				<tr:Outcome value = "Passed" />
+				<tr:TestResult ID = "tr-4846b12f-fdc7-11ee-844b-dc4a3e66df51" name = "Numeric">
+					<tr:TestData>
+						<c:Datum value = "12.495" xsi:type="ts:TS_double" nonStandardUnit="V" flags = "0x2400"/>
+					</tr:TestData>
+					<tr:TestLimits>
+						<tr:Limits>
+							<c:LimitPair operator = "AND">
+								<c:Limit comparator = "GE">
+									<c:Datum nonStandardUnit = "V" value = "11.8" xsi:type="ts:TS_double" flags = "0x0000"/>
+								</c:Limit>
+								<c:Limit comparator = "LE">
+									<c:Datum nonStandardUnit = "V" value = "15" xsi:type="ts:TS_double" flags = "0x0000"/>
+								</c:Limit>
+							</c:LimitPair>
+							<c:Extension>
+								<ts:TSLimitProperties>
+									<ts:RawLimits>
+										<ts:Low value = "11.8" xsi:type="c:double" />
+										<ts:High value = "15" xsi:type="c:double" />
+									</ts:RawLimits>
+								</ts:TSLimitProperties>
+							</c:Extension>
+						</tr:Limits>
+					</tr:TestLimits>
+				</tr:TestResult>
+			</tr:Test>
+		</tr:TestGroup>
+		<tr:SessionAction ID = "18558" name = "Wait" startDateTime = "2024-04-18T15:04:11.455"  endDateTime = "2024-04-18T15:04:11.556"  testReferenceID="ID#:9zXkv2e57hGENtxKPmbfUB">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Wait</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='13'/>
+					<ts:TotalTime value='0.100299'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:Test ID = "18559" name = "Test Supply Voltage ADC" startDateTime = "2024-04-18T15:04:11.561"  endDateTime = "2024-04-18T15:04:11.582"  testReferenceID="ID#:8ls1QJ+F7hGEH9xKPmbfUB">
+			<tr:Parameters>
+			<tr:Parameter ID = 'p-4846b131-fdc7-11ee-844b-dc4a3e66df51' name = 'CAN Command'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>053101FE3200</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			</tr:Parameters>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>StringValueTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='14'/>
+					<ts:TotalTime value='0.0207769'/>
+					<ts:ModuleTime value='0.0206978'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-4846b130-fdc7-11ee-844b-dc4a3e66df51" name = "String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2400">
+						<c:Value>18DAF254</c:Value>
+					</c:Datum>
+				</tr:TestData>
+				<tr:TestLimits>
+					<tr:Limits>
+						<c:Expected comparator = "CIEQ">
+							<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+								<c:Value>18DAF254</c:Value>
+							</c:Datum>
+						</c:Expected>
+					</tr:Limits>
+				</tr:TestLimits>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b132-fdc7-11ee-844b-dc4a3e66df51" name = "ID String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DAF254</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b133-fdc7-11ee-844b-dc4a3e66df51" name = "Data String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>000B7101FE3200302F00000000FFFFFF</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b134-fdc7-11ee-844b-dc4a3e66df51" name = "Timestamp">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>4/18/2024 3:04:11.599 PM</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:SessionAction ID = "18560" name = "ADC Convertor" startDateTime = "2024-04-18T15:04:11.584"  endDateTime = "2024-04-18T15:04:11.589"  testReferenceID="ID#:kkry2Wm57hGENtxKPmbfUB">
+			<tr:Parameters>
+			<tr:Parameter ID = 'p-4846b135-fdc7-11ee-844b-dc4a3e66df51' name = 'Measurement'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>000B7101FE3200302F00000000FFFFFF</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			</tr:Parameters>
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "Value">
+						<c:Datum value = "12.335" xsi:type="ts:TS_double" flags = "0x2000"/>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>Action</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='15'/>
+					<ts:TotalTime value='0.0051698'/>
+					<ts:ModuleTime value='0.0051325'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:Test ID = "18561" name = "Voltage_Validation" startDateTime = "2024-04-18T15:04:11.591"  endDateTime = "2024-04-18T15:04:11.616"  testReferenceID="ID#:PdJVow7B7hGEN9xKPmbfUB">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NumericLimitTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='16'/>
+					<ts:TotalTime value='0.0253727'/>
+					<ts:ModuleTime value='0.025319'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-4846b136-fdc7-11ee-844b-dc4a3e66df51" name = "Numeric">
+				<tr:TestData>
+					<c:Datum value = "12.495" xsi:type="ts:TS_double" nonStandardUnit="V" flags = "0x2400"/>
+				</tr:TestData>
+				<tr:TestLimits>
+					<tr:Limits>
+						<c:LimitPair operator = "AND">
+							<c:Limit comparator = "GE">
+								<c:Datum nonStandardUnit = "V" value = "11.8" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+							<c:Limit comparator = "LE">
+								<c:Datum nonStandardUnit = "V" value = "15" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+						</c:LimitPair>
+						<c:Extension>
+							<ts:TSLimitProperties>
+								<ts:RawLimits>
+									<ts:Low value = "11.8" xsi:type="c:double" />
+									<ts:High value = "15" xsi:type="c:double" />
+								</ts:RawLimits>
+							</ts:TSLimitProperties>
+						</c:Extension>
+					</tr:Limits>
+				</tr:TestLimits>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b137-fdc7-11ee-844b-dc4a3e66df51" name = "Measurement">
+				<tr:TestData>
+					<c:Datum value = "12.495" xsi:type="ts:TS_double" flags = "0x2000"/>
+				</tr:TestData>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:Test ID = "18562" name = "Test Switch Input I" startDateTime = "2024-04-18T15:04:11.618"  endDateTime = "2024-04-18T15:04:11.632"  testReferenceID="ID#:rPvz442b7hGELtxKPmbfUB">
+			<tr:Parameters>
+			<tr:Parameter ID = 'p-4846b139-fdc7-11ee-844b-dc4a3e66df51' name = 'CAN Command'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>053101FE3000</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			<tr:Parameter ID = 'p-4846b13a-fdc7-11ee-844b-dc4a3e66df51' name = 'ID Response'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DAF254</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			<tr:Parameter ID = 'p-4846b13b-fdc7-11ee-844b-dc4a3e66df51' name = 'ID Request'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DA54F2</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			</tr:Parameters>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>StringValueTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='17'/>
+					<ts:TotalTime value='0.0138646'/>
+					<ts:ModuleTime value='0.0138202'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-4846b138-fdc7-11ee-844b-dc4a3e66df51" name = "String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2400">
+						<c:Value>00097101FE300044551500FF</c:Value>
+					</c:Datum>
+				</tr:TestData>
+				<tr:Extension>
+					<ts:TSLimitProperties>
+						<ts:IsComparisonTypeLog value = 'true'/>
+					</ts:TSLimitProperties>
+				</tr:Extension>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b13c-fdc7-11ee-844b-dc4a3e66df51" name = "ID String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DAF254</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b13d-fdc7-11ee-844b-dc4a3e66df51" name = "Data String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>00097101FE300044551500FF</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b13e-fdc7-11ee-844b-dc4a3e66df51" name = "Timestamp">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>4/18/2024 3:04:11.648 PM</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:SessionAction ID = "18563" name = "DAQ Switch OBH Close" startDateTime = "2024-04-18T15:04:11.633"  endDateTime = "2024-04-18T15:04:11.640"  testReferenceID="ID#:H8WdX4ib7hGELtxKPmbfUB">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>Action</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='18'/>
+					<ts:TotalTime value='0.0068126'/>
+					<ts:ModuleTime value='0.0067867'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "18564" name = "Wait" startDateTime = "2024-04-18T15:04:11.642"  endDateTime = "2024-04-18T15:04:12.143"  testReferenceID="ID#:U+i/s5Gb7hGELtxKPmbfUB">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Wait</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='19'/>
+					<ts:TotalTime value='0.500504'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:Test ID = "18565" name = "Test Switch Input II" startDateTime = "2024-04-18T15:04:12.144"  endDateTime = "2024-04-18T15:04:12.156"  testReferenceID="ID#:2+66WoWb7hGELtxKPmbfUB">
+			<tr:Parameters>
+			<tr:Parameter ID = 'p-4846b140-fdc7-11ee-844b-dc4a3e66df51' name = 'CAN Command'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>053101FE3000</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			<tr:Parameter ID = 'p-4846b141-fdc7-11ee-844b-dc4a3e66df51' name = 'ID Response'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DAF254</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			<tr:Parameter ID = 'p-4846b142-fdc7-11ee-844b-dc4a3e66df51' name = 'ID Request'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DA54F2</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			</tr:Parameters>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>StringValueTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='20'/>
+					<ts:TotalTime value='0.011235'/>
+					<ts:ModuleTime value='0.0111882'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-4846b13f-fdc7-11ee-844b-dc4a3e66df51" name = "String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2400">
+						<c:Value>00097101FE300041551500FF</c:Value>
+					</c:Datum>
+				</tr:TestData>
+				<tr:Extension>
+					<ts:TSLimitProperties>
+						<ts:IsComparisonTypeLog value = 'true'/>
+					</ts:TSLimitProperties>
+				</tr:Extension>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b143-fdc7-11ee-844b-dc4a3e66df51" name = "ID String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DAF254</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b144-fdc7-11ee-844b-dc4a3e66df51" name = "Data String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>00097101FE300041551500FF</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b145-fdc7-11ee-844b-dc4a3e66df51" name = "Timestamp">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>4/18/2024 3:04:12.173 PM</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:SessionAction ID = "18566" name = "DAQ Switch OBH Open" startDateTime = "2024-04-18T15:04:12.157"  endDateTime = "2024-04-18T15:04:12.164"  testReferenceID="ID#:8IMWJDb07hGESNxKPmbfUB">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>Action</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='21'/>
+					<ts:TotalTime value='0.0064873'/>
+					<ts:ModuleTime value='0.0061226'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "18567" name = "Wait" startDateTime = "2024-04-18T15:04:12.166"  endDateTime = "2024-04-18T15:04:12.666"  testReferenceID="ID#:kg/Ei4mb7hGELtxKPmbfUB">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Wait</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='22'/>
+					<ts:TotalTime value='0.500434'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:Test ID = "18568" name = "Test Switch Input III" startDateTime = "2024-04-18T15:04:12.668"  endDateTime = "2024-04-18T15:04:12.686"  testReferenceID="ID#:uW+rNzb07hGESNxKPmbfUB">
+			<tr:Parameters>
+			<tr:Parameter ID = 'p-4846b147-fdc7-11ee-844b-dc4a3e66df51' name = 'CAN Command'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>053101FE3000</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			<tr:Parameter ID = 'p-4846b148-fdc7-11ee-844b-dc4a3e66df51' name = 'ID Response'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DAF254</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			<tr:Parameter ID = 'p-4846b149-fdc7-11ee-844b-dc4a3e66df51' name = 'ID Request'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DA54F2</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			</tr:Parameters>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>StringValueTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='23'/>
+					<ts:TotalTime value='0.017659'/>
+					<ts:ModuleTime value='0.0176182'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-4846b146-fdc7-11ee-844b-dc4a3e66df51" name = "String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2400">
+						<c:Value>00097101FE300044551500FF</c:Value>
+					</c:Datum>
+				</tr:TestData>
+				<tr:Extension>
+					<ts:TSLimitProperties>
+						<ts:IsComparisonTypeLog value = 'true'/>
+					</ts:TSLimitProperties>
+				</tr:Extension>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b14a-fdc7-11ee-844b-dc4a3e66df51" name = "ID String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DAF254</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b14b-fdc7-11ee-844b-dc4a3e66df51" name = "Data String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>00097101FE300044551500FF</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b14c-fdc7-11ee-844b-dc4a3e66df51" name = "Timestamp">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>4/18/2024 3:04:12.701 PM</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:SessionAction ID = "18569" name = "DAQ Switch IBH Close" startDateTime = "2024-04-18T15:04:12.688"  endDateTime = "2024-04-18T15:04:12.694"  testReferenceID="ID#:uG+rNzb07hGESNxKPmbfUB">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>Action</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='24'/>
+					<ts:TotalTime value='0.0067249'/>
+					<ts:ModuleTime value='0.0066891'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "18570" name = "Wait" startDateTime = "2024-04-18T15:04:12.696"  endDateTime = "2024-04-18T15:04:13.197"  testReferenceID="ID#:swzlVDb07hGESNxKPmbfUB">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Wait</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='25'/>
+					<ts:TotalTime value='0.500239'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:Test ID = "18571" name = "Test Switch Input IV" startDateTime = "2024-04-18T15:04:13.202"  endDateTime = "2024-04-18T15:04:13.229"  testReferenceID="ID#:tAzlVDb07hGESNxKPmbfUB">
+			<tr:Parameters>
+			<tr:Parameter ID = 'p-4846b14e-fdc7-11ee-844b-dc4a3e66df51' name = 'CAN Command'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>053101FE3000</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			<tr:Parameter ID = 'p-4846b14f-fdc7-11ee-844b-dc4a3e66df51' name = 'ID Response'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DAF254</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			<tr:Parameter ID = 'p-4846b150-fdc7-11ee-844b-dc4a3e66df51' name = 'ID Request'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DA54F2</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			</tr:Parameters>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>StringValueTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='26'/>
+					<ts:TotalTime value='0.0269644'/>
+					<ts:ModuleTime value='0.0268929'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-4846b14d-fdc7-11ee-844b-dc4a3e66df51" name = "String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2400">
+						<c:Value>00097101FE300014551500FF</c:Value>
+					</c:Datum>
+				</tr:TestData>
+				<tr:Extension>
+					<ts:TSLimitProperties>
+						<ts:IsComparisonTypeLog value = 'true'/>
+					</ts:TSLimitProperties>
+				</tr:Extension>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b151-fdc7-11ee-844b-dc4a3e66df51" name = "ID String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DAF254</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b152-fdc7-11ee-844b-dc4a3e66df51" name = "Data String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>00097101FE300014551500FF</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b153-fdc7-11ee-844b-dc4a3e66df51" name = "Timestamp">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>4/18/2024 3:04:13.245 PM</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:SessionAction ID = "18572" name = "DAQ Switch IBH Open" startDateTime = "2024-04-18T15:04:13.231"  endDateTime = "2024-04-18T15:04:13.236"  testReferenceID="ID#:gxrEnYib7hGELtxKPmbfUB">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>Action</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='27'/>
+					<ts:TotalTime value='0.0056803'/>
+					<ts:ModuleTime value='0.0056432'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "18573" name = "Wait" startDateTime = "2024-04-18T15:04:13.238"  endDateTime = "2024-04-18T15:04:13.739"  testReferenceID="ID#:4jbRbDb07hGESNxKPmbfUB">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Wait</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='28'/>
+					<ts:TotalTime value='0.500421'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:Test ID = "18574" name = "Test Read Supercap 0" startDateTime = "2024-04-18T15:04:13.741"  endDateTime = "2024-04-18T15:04:13.756"  testReferenceID="ID#:cugXx0i27hGENNxKPmbfUB">
+			<tr:Parameters>
+			<tr:Parameter ID = 'p-4846b155-fdc7-11ee-844b-dc4a3e66df51' name = 'CAN Command'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>053101FE3201</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			<tr:Parameter ID = 'p-4846b156-fdc7-11ee-844b-dc4a3e66df51' name = 'ID Response'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DAF254</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			<tr:Parameter ID = 'p-4846b157-fdc7-11ee-844b-dc4a3e66df51' name = 'ID Request'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DA54F2</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			</tr:Parameters>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>StringValueTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='29'/>
+					<ts:TotalTime value='0.0152997'/>
+					<ts:ModuleTime value='0.0152219'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-4846b154-fdc7-11ee-844b-dc4a3e66df51" name = "String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2400">
+						<c:Value>000B7101FE3201000000000000FFFFFF</c:Value>
+					</c:Datum>
+				</tr:TestData>
+				<tr:Extension>
+					<ts:TSLimitProperties>
+						<ts:IsComparisonTypeLog value = 'true'/>
+					</ts:TSLimitProperties>
+				</tr:Extension>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b158-fdc7-11ee-844b-dc4a3e66df51" name = "ID String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DAF254</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b159-fdc7-11ee-844b-dc4a3e66df51" name = "Data String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>000B7101FE3201000000000000FFFFFF</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b15a-fdc7-11ee-844b-dc4a3e66df51" name = "Timestamp">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>4/18/2024 3:04:13.774 PM</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:Test ID = "18575" name = "Test Charge Supercap I" startDateTime = "2024-04-18T15:04:13.759"  endDateTime = "2024-04-18T15:04:13.771"  testReferenceID="ID#:t5ZtWFGY7hGEJ9xKPmbfUB">
+			<tr:Parameters>
+			<tr:Parameter ID = 'p-4846b15c-fdc7-11ee-844b-dc4a3e66df51' name = 'CAN Command'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>063101FE520028</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			<tr:Parameter ID = 'p-4846b15d-fdc7-11ee-844b-dc4a3e66df51' name = 'ID Response'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DAF254</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			<tr:Parameter ID = 'p-4846b15e-fdc7-11ee-844b-dc4a3e66df51' name = 'ID Request'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DA54F2</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			</tr:Parameters>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>StringValueTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='30'/>
+					<ts:TotalTime value='0.0124701'/>
+					<ts:ModuleTime value='0.0124161'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-4846b15b-fdc7-11ee-844b-dc4a3e66df51" name = "String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2400">
+						<c:Value>00097101FE520100280000FF</c:Value>
+					</c:Datum>
+				</tr:TestData>
+				<tr:Extension>
+					<ts:TSLimitProperties>
+						<ts:IsComparisonTypeLog value = 'true'/>
+					</ts:TSLimitProperties>
+				</tr:Extension>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b15f-fdc7-11ee-844b-dc4a3e66df51" name = "ID String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DAF254</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b160-fdc7-11ee-844b-dc4a3e66df51" name = "Data String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>00097101FE520100280000FF</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b161-fdc7-11ee-844b-dc4a3e66df51" name = "Timestamp">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>4/18/2024 3:04:13.789 PM</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:SessionAction ID = "18576" name = "Wait" startDateTime = "2024-04-18T15:04:13.773"  endDateTime = "2024-04-18T15:04:15.773"  testReferenceID="ID#:RkXB0Ui27hGENNxKPmbfUB">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Wait</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='31'/>
+					<ts:TotalTime value='2.00033'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:Test ID = "18577" name = "Test Read Supercap I" startDateTime = "2024-04-18T15:04:15.780"  endDateTime = "2024-04-18T15:04:15.801"  testReferenceID="ID#:9v8qOk+Y7hGEJ9xKPmbfUB">
+			<tr:Parameters>
+			<tr:Parameter ID = 'p-4846b163-fdc7-11ee-844b-dc4a3e66df51' name = 'CAN Command'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>053101FE3201</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			<tr:Parameter ID = 'p-4846b164-fdc7-11ee-844b-dc4a3e66df51' name = 'ID Response'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DAF254</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			<tr:Parameter ID = 'p-4846b165-fdc7-11ee-844b-dc4a3e66df51' name = 'ID Request'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DA54F2</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			</tr:Parameters>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>StringValueTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='32'/>
+					<ts:TotalTime value='0.0208615'/>
+					<ts:ModuleTime value='0.0207253'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-4846b162-fdc7-11ee-844b-dc4a3e66df51" name = "String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2400">
+						<c:Value>000B7101FE3201000000000000FFFFFF</c:Value>
+					</c:Datum>
+				</tr:TestData>
+				<tr:Extension>
+					<ts:TSLimitProperties>
+						<ts:IsComparisonTypeLog value = 'true'/>
+					</ts:TSLimitProperties>
+				</tr:Extension>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b166-fdc7-11ee-844b-dc4a3e66df51" name = "ID String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DAF254</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b167-fdc7-11ee-844b-dc4a3e66df51" name = "Data String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>000B7101FE3201000000000000FFFFFF</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b168-fdc7-11ee-844b-dc4a3e66df51" name = "Timestamp">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>4/18/2024 3:04:15.817 PM</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:SessionAction ID = "18578" name = "Wait" startDateTime = "2024-04-18T15:04:15.803"  endDateTime = "2024-04-18T15:04:17.803"  testReferenceID="ID#:kO9ISlKY7hGEJ9xKPmbfUB">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Wait</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='33'/>
+					<ts:TotalTime value='2.0004'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:Test ID = "18579" name = "Test Read Supercap II" startDateTime = "2024-04-18T15:04:17.806"  endDateTime = "2024-04-18T15:04:17.820"  testReferenceID="ID#:HJt4fVGY7hGEJ9xKPmbfUB">
+			<tr:Parameters>
+			<tr:Parameter ID = 'p-4846b16a-fdc7-11ee-844b-dc4a3e66df51' name = 'CAN Command'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>053101FE3201</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			<tr:Parameter ID = 'p-4846b16b-fdc7-11ee-844b-dc4a3e66df51' name = 'ID Response'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DAF254</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			<tr:Parameter ID = 'p-4846b16c-fdc7-11ee-844b-dc4a3e66df51' name = 'ID Request'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DA54F2</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			</tr:Parameters>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>StringValueTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='34'/>
+					<ts:TotalTime value='0.0142501'/>
+					<ts:ModuleTime value='0.0141291'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-4846b169-fdc7-11ee-844b-dc4a3e66df51" name = "String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2400">
+						<c:Value>000B7101FE3201000000000000FFFFFF</c:Value>
+					</c:Datum>
+				</tr:TestData>
+				<tr:Extension>
+					<ts:TSLimitProperties>
+						<ts:IsComparisonTypeLog value = 'true'/>
+					</ts:TSLimitProperties>
+				</tr:Extension>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b16d-fdc7-11ee-844b-dc4a3e66df51" name = "ID String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DAF254</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b16e-fdc7-11ee-844b-dc4a3e66df51" name = "Data String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>000B7101FE3201000000000000FFFFFF</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b16f-fdc7-11ee-844b-dc4a3e66df51" name = "Timestamp">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>4/18/2024 3:04:17.838 PM</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:SessionAction ID = "18580" name = "Wait" startDateTime = "2024-04-18T15:04:17.822"  endDateTime = "2024-04-18T15:04:21.822"  testReferenceID="ID#:6RT/gkO27hGENNxKPmbfUB">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Wait</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='35'/>
+					<ts:TotalTime value='4.00017'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:Test ID = "18581" name = "Test Read Supercap III" startDateTime = "2024-04-18T15:04:21.824"  endDateTime = "2024-04-18T15:04:21.840"  testReferenceID="ID#:6hT/gkO27hGENNxKPmbfUB">
+			<tr:Parameters>
+			<tr:Parameter ID = 'p-4846b171-fdc7-11ee-844b-dc4a3e66df51' name = 'CAN Command'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>053101FE3201</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			<tr:Parameter ID = 'p-4846b172-fdc7-11ee-844b-dc4a3e66df51' name = 'ID Response'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DAF254</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			<tr:Parameter ID = 'p-4846b173-fdc7-11ee-844b-dc4a3e66df51' name = 'ID Request'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DA54F2</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			</tr:Parameters>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>StringValueTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='36'/>
+					<ts:TotalTime value='0.0160645'/>
+					<ts:ModuleTime value='0.0160083'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-4846b170-fdc7-11ee-844b-dc4a3e66df51" name = "String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2400">
+						<c:Value>000B7101FE3201000000000000FFFFFF</c:Value>
+					</c:Datum>
+				</tr:TestData>
+				<tr:Extension>
+					<ts:TSLimitProperties>
+						<ts:IsComparisonTypeLog value = 'true'/>
+					</ts:TSLimitProperties>
+				</tr:Extension>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b174-fdc7-11ee-844b-dc4a3e66df51" name = "ID String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DAF254</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b175-fdc7-11ee-844b-dc4a3e66df51" name = "Data String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>000B7101FE3201000000000000FFFFFF</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b176-fdc7-11ee-844b-dc4a3e66df51" name = "Timestamp">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>4/18/2024 3:04:21.859 PM</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:Test ID = "18582" name = "Test Stop Charge Supercap" startDateTime = "2024-04-18T15:04:21.842"  endDateTime = "2024-04-18T15:04:21.855"  testReferenceID="ID#:6EtlnJCa7hGEKtxKPmbfUB">
+			<tr:Parameters>
+			<tr:Parameter ID = 'p-4846b178-fdc7-11ee-844b-dc4a3e66df51' name = 'CAN Command'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>063101FE520000</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			<tr:Parameter ID = 'p-4846b179-fdc7-11ee-844b-dc4a3e66df51' name = 'ID Response'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DAF254</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			<tr:Parameter ID = 'p-4846b17a-fdc7-11ee-844b-dc4a3e66df51' name = 'ID Request'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DA54F2</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			</tr:Parameters>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>StringValueTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='37'/>
+					<ts:TotalTime value='0.0134776'/>
+					<ts:ModuleTime value='0.0134265'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-4846b177-fdc7-11ee-844b-dc4a3e66df51" name = "String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2400">
+						<c:Value>00097101FE520400000000FF</c:Value>
+					</c:Datum>
+				</tr:TestData>
+				<tr:Extension>
+					<ts:TSLimitProperties>
+						<ts:IsComparisonTypeLog value = 'true'/>
+					</ts:TSLimitProperties>
+				</tr:Extension>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b17b-fdc7-11ee-844b-dc4a3e66df51" name = "ID String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DAF254</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b17c-fdc7-11ee-844b-dc4a3e66df51" name = "Data String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>00097101FE520400000000FF</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b17d-fdc7-11ee-844b-dc4a3e66df51" name = "Timestamp">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>4/18/2024 3:04:21.874 PM</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:SessionAction ID = "18583" name = "Init short" startDateTime = "2024-04-18T15:04:21.857"  endDateTime = "2024-04-18T15:04:21.863"  testReferenceID="ID#:ZHs8NzLB7hGEN9xKPmbfUB">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>Action</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='38'/>
+					<ts:TotalTime value='0.006152'/>
+					<ts:ModuleTime value='0.0061133'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "18584" name = "Not Sleep Command" startDateTime = "2024-04-18T15:04:24.868"  endDateTime = "2024-04-18T15:04:24.885"  testReferenceID="ID#:u89jEGLs7hGEQNxKPmbfUB">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>Action</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='40'/>
+					<ts:TotalTime value='0.016721'/>
+					<ts:ModuleTime value='0.0166818'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "18585" name = "Not Sleep Command" startDateTime = "2024-04-18T15:04:27.893"  endDateTime = "2024-04-18T15:04:27.921"  testReferenceID="ID#:tdRBH2Ls7hGEQNxKPmbfUB">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>Action</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='42'/>
+					<ts:TotalTime value='0.0273866'/>
+					<ts:ModuleTime value='0.0273194'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "18586" name = "Delete short" startDateTime = "2024-04-18T15:04:30.928"  endDateTime = "2024-04-18T15:04:30.938"  testReferenceID="ID#:Zns8NzLB7hGEN9xKPmbfUB">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>Action</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='44'/>
+					<ts:TotalTime value='0.0098292'/>
+					<ts:ModuleTime value='0.0092598'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:Test ID = "18587" name = "Test Read Supercap IV" startDateTime = "2024-04-18T15:04:30.940"  endDateTime = "2024-04-18T15:04:30.952"  testReferenceID="ID#:jAiM5zPB7hGEN9xKPmbfUB">
+			<tr:Parameters>
+			<tr:Parameter ID = 'p-4846b17f-fdc7-11ee-844b-dc4a3e66df51' name = 'CAN Command'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>053101FE3201</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			<tr:Parameter ID = 'p-4846b180-fdc7-11ee-844b-dc4a3e66df51' name = 'ID Response'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DAF254</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			<tr:Parameter ID = 'p-4846b181-fdc7-11ee-844b-dc4a3e66df51' name = 'ID Request'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DA54F2</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			</tr:Parameters>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>StringValueTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='45'/>
+					<ts:TotalTime value='0.0128584'/>
+					<ts:ModuleTime value='0.0128112'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-4846b17e-fdc7-11ee-844b-dc4a3e66df51" name = "String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2400">
+						<c:Value>000B7101FE3201000000000000FFFFFF</c:Value>
+					</c:Datum>
+				</tr:TestData>
+				<tr:Extension>
+					<ts:TSLimitProperties>
+						<ts:IsComparisonTypeLog value = 'true'/>
+					</ts:TSLimitProperties>
+				</tr:Extension>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b182-fdc7-11ee-844b-dc4a3e66df51" name = "ID String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DAF254</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b183-fdc7-11ee-844b-dc4a3e66df51" name = "Data String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>000B7101FE3201000000000000FFFFFF</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b184-fdc7-11ee-844b-dc4a3e66df51" name = "Timestamp">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>4/18/2024 3:04:30.971 PM</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:SessionAction ID = "18588" name = "Test Compare charge" startDateTime = "2024-04-18T15:04:30.954"  endDateTime = "2024-04-18T15:04:30.958"  testReferenceID="ID#:g/284z227hGENNxKPmbfUB">
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "Supercap Read III">
+						<c:Datum value = "0" xsi:type="ts:TS_double" flags = "0x2000"/>
+					</c:Item>
+					<c:Item name = "Supercap Read I">
+						<c:Datum value = "0" xsi:type="ts:TS_double" flags = "0x2000"/>
+					</c:Item>
+					<c:Item name = "Supercap Read 0">
+						<c:Datum value = "0" xsi:type="ts:TS_double" flags = "0x2000"/>
+					</c:Item>
+					<c:Item name = "Supercap Read II">
+						<c:Datum value = "0" xsi:type="ts:TS_double" flags = "0x2000"/>
+					</c:Item>
+					<c:Item name = "Supercap Read IV">
+						<c:Datum value = "0" xsi:type="ts:TS_double" flags = "0x2000"/>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>Action</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='46'/>
+					<ts:TotalTime value='0.0043122'/>
+					<ts:ModuleTime value='0.0042896'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "18589" name = "DAQ Resistor Close" startDateTime = "2024-04-18T15:04:30.960"  endDateTime = "2024-04-18T15:04:30.966"  testReferenceID="ID#:Uc3s5HW17hGENNxKPmbfUB">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>Action</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='47'/>
+					<ts:TotalTime value='0.0062954'/>
+					<ts:ModuleTime value='0.0062712'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:Test ID = "18590" name = "Motor Control Command" startDateTime = "2024-04-18T15:04:30.968"  endDateTime = "2024-04-18T15:04:30.982"  testReferenceID="ID#:Ci/KVFn37hGESNxKPmbfUB">
+			<tr:Parameters>
+			<tr:Parameter ID = 'p-4846b186-fdc7-11ee-844b-dc4a3e66df51' name = 'CAN Command'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>000A3101FE420010FFFFFFFF</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			<tr:Parameter ID = 'p-4846b187-fdc7-11ee-844b-dc4a3e66df51' name = 'ID Response'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DAF254</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			<tr:Parameter ID = 'p-4846b188-fdc7-11ee-844b-dc4a3e66df51' name = 'ID Request'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DA54F2</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			</tr:Parameters>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>StringValueTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='48'/>
+					<ts:TotalTime value='0.0142665'/>
+					<ts:ModuleTime value='0.014227'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-4846b185-fdc7-11ee-844b-dc4a3e66df51" name = "String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2400">
+						<c:Value>067101FE4200F0</c:Value>
+					</c:Datum>
+				</tr:TestData>
+				<tr:Extension>
+					<ts:TSLimitProperties>
+						<ts:IsComparisonTypeLog value = 'true'/>
+					</ts:TSLimitProperties>
+				</tr:Extension>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b189-fdc7-11ee-844b-dc4a3e66df51" name = "ID String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DAF254</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b18a-fdc7-11ee-844b-dc4a3e66df51" name = "Data String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>067101FE4200F0</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b18b-fdc7-11ee-844b-dc4a3e66df51" name = "Timestamp">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>4/18/2024 3:04:31.000 PM</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:Test ID = "18591" name = "Test Start Motor Open" startDateTime = "2024-04-18T15:04:30.984"  endDateTime = "2024-04-18T15:04:30.998"  testReferenceID="ID#:fCDPM1eY7hGEJ9xKPmbfUB">
+			<tr:Parameters>
+			<tr:Parameter ID = 'p-4846b18d-fdc7-11ee-844b-dc4a3e66df51' name = 'CAN Command'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>000A3101FE43007FFFFFFFFF</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			<tr:Parameter ID = 'p-4846b18e-fdc7-11ee-844b-dc4a3e66df51' name = 'ID Response'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DAF254</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			<tr:Parameter ID = 'p-4846b18f-fdc7-11ee-844b-dc4a3e66df51' name = 'ID Request'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DA54F2</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			</tr:Parameters>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>StringValueTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='49'/>
+					<ts:TotalTime value='0.0132573'/>
+					<ts:ModuleTime value='0.0132062'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-4846b18c-fdc7-11ee-844b-dc4a3e66df51" name = "String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2400">
+						<c:Value>000B7101FE4300107FFFFFFF01FFFFFF</c:Value>
+					</c:Datum>
+				</tr:TestData>
+				<tr:Extension>
+					<ts:TSLimitProperties>
+						<ts:IsComparisonTypeLog value = 'true'/>
+					</ts:TSLimitProperties>
+				</tr:Extension>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b190-fdc7-11ee-844b-dc4a3e66df51" name = "ID String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DAF254</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b191-fdc7-11ee-844b-dc4a3e66df51" name = "Data String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>000B7101FE4300107FFFFFFF01FFFFFF</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b192-fdc7-11ee-844b-dc4a3e66df51" name = "Timestamp">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>4/18/2024 3:04:31.016 PM</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:SessionAction ID = "18592" name = "Wait" startDateTime = "2024-04-18T15:04:31.000"  endDateTime = "2024-04-18T15:04:31.500"  testReferenceID="ID#:NCApUVmY7hGEJ9xKPmbfUB">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Wait</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='50'/>
+					<ts:TotalTime value='0.500274'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:Test ID = "18593" name = "Test Read Current" startDateTime = "2024-04-18T15:04:31.509"  endDateTime = "2024-04-18T15:04:31.535"  testReferenceID="ID#:DU/7JVmY7hGEJ9xKPmbfUB">
+			<tr:Parameters>
+			<tr:Parameter ID = 'p-4846b194-fdc7-11ee-844b-dc4a3e66df51' name = 'CAN Command'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>053101FE3230</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			<tr:Parameter ID = 'p-4846b195-fdc7-11ee-844b-dc4a3e66df51' name = 'ID Response'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DAF254</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			<tr:Parameter ID = 'p-4846b196-fdc7-11ee-844b-dc4a3e66df51' name = 'ID Request'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DA54F2</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			</tr:Parameters>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>StringValueTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='51'/>
+					<ts:TotalTime value='0.0265569'/>
+					<ts:ModuleTime value='0.026482'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-4846b193-fdc7-11ee-844b-dc4a3e66df51" name = "String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2400">
+						<c:Value>000B7101FE32302AA52AED0425FFFFFF</c:Value>
+					</c:Datum>
+				</tr:TestData>
+				<tr:Extension>
+					<ts:TSLimitProperties>
+						<ts:IsComparisonTypeLog value = 'true'/>
+					</ts:TSLimitProperties>
+				</tr:Extension>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b197-fdc7-11ee-844b-dc4a3e66df51" name = "ID String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DAF254</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b198-fdc7-11ee-844b-dc4a3e66df51" name = "Data String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>000B7101FE32302AA52AED0425FFFFFF</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b199-fdc7-11ee-844b-dc4a3e66df51" name = "Timestamp">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>4/18/2024 3:04:31.554 PM</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:Test ID = "18594" name = "Test Stop Motor Open" startDateTime = "2024-04-18T15:04:31.537"  endDateTime = "2024-04-18T15:04:31.553"  testReferenceID="ID#:A7slaFeY7hGEJ9xKPmbfUB">
+			<tr:Parameters>
+			<tr:Parameter ID = 'p-4846b19b-fdc7-11ee-844b-dc4a3e66df51' name = 'CAN Command'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>000A3102FE43007FFFFFFFFF</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			<tr:Parameter ID = 'p-4846b19c-fdc7-11ee-844b-dc4a3e66df51' name = 'ID Response'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DAF254</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			<tr:Parameter ID = 'p-4846b19d-fdc7-11ee-844b-dc4a3e66df51' name = 'ID Request'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DA54F2</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			</tr:Parameters>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>StringValueTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='52'/>
+					<ts:TotalTime value='0.0154206'/>
+					<ts:ModuleTime value='0.0153076'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-4846b19a-fdc7-11ee-844b-dc4a3e66df51" name = "String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2400">
+						<c:Value>037F3112</c:Value>
+					</c:Datum>
+				</tr:TestData>
+				<tr:Extension>
+					<ts:TSLimitProperties>
+						<ts:IsComparisonTypeLog value = 'true'/>
+					</ts:TSLimitProperties>
+				</tr:Extension>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b19e-fdc7-11ee-844b-dc4a3e66df51" name = "ID String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DAF254</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b19f-fdc7-11ee-844b-dc4a3e66df51" name = "Data String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>037F3112</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b1a0-fdc7-11ee-844b-dc4a3e66df51" name = "Timestamp">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>4/18/2024 3:04:31.569 PM</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:Test ID = "18595" name = "Test Start Motor Close" startDateTime = "2024-04-18T15:04:31.558"  endDateTime = "2024-04-18T15:04:31.582"  testReferenceID="ID#:zU4HileY7hGEJ9xKPmbfUB">
+			<tr:Parameters>
+			<tr:Parameter ID = 'p-4846b1a2-fdc7-11ee-844b-dc4a3e66df51' name = 'CAN Command'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>000A3101FE43008000FFFFFF</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			<tr:Parameter ID = 'p-4846b1a3-fdc7-11ee-844b-dc4a3e66df51' name = 'ID Response'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DAF254</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			<tr:Parameter ID = 'p-4846b1a4-fdc7-11ee-844b-dc4a3e66df51' name = 'ID Request'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DA54F2</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			</tr:Parameters>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>StringValueTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='53'/>
+					<ts:TotalTime value='0.0237568'/>
+					<ts:ModuleTime value='0.0236775'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-4846b1a1-fdc7-11ee-844b-dc4a3e66df51" name = "String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2400">
+						<c:Value>000B7101FE4300108000FFFF02FFFFFF</c:Value>
+					</c:Datum>
+				</tr:TestData>
+				<tr:Extension>
+					<ts:TSLimitProperties>
+						<ts:IsComparisonTypeLog value = 'true'/>
+					</ts:TSLimitProperties>
+				</tr:Extension>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b1a5-fdc7-11ee-844b-dc4a3e66df51" name = "ID String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DAF254</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b1a6-fdc7-11ee-844b-dc4a3e66df51" name = "Data String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>000B7101FE4300108000FFFF02FFFFFF</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:SessionAction ID = "18596" name = "Wait" startDateTime = "2024-04-18T15:04:31.586"  endDateTime = "2024-04-18T15:04:32.086"  testReferenceID="ID#:NSApUVmY7hGEJ9xKPmbfUB">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Wait</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='54'/>
+					<ts:TotalTime value='0.50019'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:Test ID = "18597" name = "Test Read Current" startDateTime = "2024-04-18T15:04:32.088"  endDateTime = "2024-04-18T15:04:32.104"  testReferenceID="ID#:2aWdSlmY7hGEJ9xKPmbfUB">
+			<tr:Parameters>
+			<tr:Parameter ID = 'p-4846b1a8-fdc7-11ee-844b-dc4a3e66df51' name = 'CAN Command'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>053101FE3230</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			<tr:Parameter ID = 'p-4846b1a9-fdc7-11ee-844b-dc4a3e66df51' name = 'ID Response'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DAF254</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			<tr:Parameter ID = 'p-4846b1aa-fdc7-11ee-844b-dc4a3e66df51' name = 'ID Request'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DA54F2</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			</tr:Parameters>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>StringValueTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='55'/>
+					<ts:TotalTime value='0.0159442'/>
+					<ts:ModuleTime value='0.015873'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-4846b1a7-fdc7-11ee-844b-dc4a3e66df51" name = "String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2400">
+						<c:Value>000B7101FE323000732AB90435FFFFFF</c:Value>
+					</c:Datum>
+				</tr:TestData>
+				<tr:Extension>
+					<ts:TSLimitProperties>
+						<ts:IsComparisonTypeLog value = 'true'/>
+					</ts:TSLimitProperties>
+				</tr:Extension>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b1ab-fdc7-11ee-844b-dc4a3e66df51" name = "ID String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DAF254</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b1ac-fdc7-11ee-844b-dc4a3e66df51" name = "Data String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>000B7101FE323000732AB90435FFFFFF</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:Test ID = "18598" name = "Test Stop Motor Close" startDateTime = "2024-04-18T15:04:32.106"  endDateTime = "2024-04-18T15:04:32.119"  testReferenceID="ID#:EzaMn1eY7hGEJ9xKPmbfUB">
+			<tr:Parameters>
+			<tr:Parameter ID = 'p-4846b1ae-fdc7-11ee-844b-dc4a3e66df51' name = 'CAN Command'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>000A3102FE43008000FFFFFF</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			<tr:Parameter ID = 'p-4846b1af-fdc7-11ee-844b-dc4a3e66df51' name = 'ID Response'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DAF254</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			<tr:Parameter ID = 'p-4846b1b0-fdc7-11ee-844b-dc4a3e66df51' name = 'ID Request'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DA54F2</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			</tr:Parameters>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>StringValueTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='56'/>
+					<ts:TotalTime value='0.0129533'/>
+					<ts:ModuleTime value='0.0129041'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-4846b1ad-fdc7-11ee-844b-dc4a3e66df51" name = "String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2400">
+						<c:Value>037F3112</c:Value>
+					</c:Datum>
+				</tr:TestData>
+				<tr:Extension>
+					<ts:TSLimitProperties>
+						<ts:IsComparisonTypeLog value = 'true'/>
+					</ts:TSLimitProperties>
+				</tr:Extension>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b1b1-fdc7-11ee-844b-dc4a3e66df51" name = "ID String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DAF254</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b1b2-fdc7-11ee-844b-dc4a3e66df51" name = "Data String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>037F3112</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:SessionAction ID = "18599" name = "DAQ Resistor Open" startDateTime = "2024-04-18T15:04:32.121"  endDateTime = "2024-04-18T15:04:32.129"  testReferenceID="ID#:KqHgAHa17hGENNxKPmbfUB">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>Action</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='57'/>
+					<ts:TotalTime value='0.0081695'/>
+					<ts:ModuleTime value='0.0080981'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "18600" name = "Wait 1 sec" startDateTime = "2024-04-18T15:04:32.144"  endDateTime = "2024-04-18T15:04:33.644"  testReferenceID="ID#:HqLEnCfw7hGEQ9xKPmbfUB">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Wait</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='59'/>
+					<ts:TotalTime value='1.50045'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:Test ID = "18601" name = "Test Hall Test 1" startDateTime = "2024-04-18T15:04:33.650"  endDateTime = "2024-04-18T15:04:33.672"  testReferenceID="ID#:U1AYXGDs7hGEQNxKPmbfUB">
+			<tr:Parameters>
+			<tr:Parameter ID = 'p-4846b1b4-fdc7-11ee-844b-dc4a3e66df51' name = 'CAN Command'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>053101FE3000</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			</tr:Parameters>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>StringValueTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='60'/>
+					<ts:TotalTime value='0.0221306'/>
+					<ts:ModuleTime value='0.0220384'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-4846b1b3-fdc7-11ee-844b-dc4a3e66df51" name = "String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2400">
+						<c:Value>18DAF254</c:Value>
+					</c:Datum>
+				</tr:TestData>
+				<tr:TestLimits>
+					<tr:Limits>
+						<c:Expected comparator = "CIEQ">
+							<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+								<c:Value>18DAF254</c:Value>
+							</c:Datum>
+						</c:Expected>
+					</tr:Limits>
+				</tr:TestLimits>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b1b5-fdc7-11ee-844b-dc4a3e66df51" name = "ID String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DAF254</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b1b6-fdc7-11ee-844b-dc4a3e66df51" name = "Data String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>00097101FE300044551500FF</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b1b7-fdc7-11ee-844b-dc4a3e66df51" name = "Timestamp">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>4/18/2024 3:04:33.690 PM</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:SessionAction ID = "18602" name = "Wait 1 sec" startDateTime = "2024-04-18T15:04:33.688"  endDateTime = "2024-04-18T15:04:35.188"  testReferenceID="ID#:0nnPsCfw7hGEQ9xKPmbfUB">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Wait</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='62'/>
+					<ts:TotalTime value='1.50057'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:Test ID = "18603" name = "Test Hall Test 2" startDateTime = "2024-04-18T15:04:35.193"  endDateTime = "2024-04-18T15:04:35.218"  testReferenceID="ID#:VVAYXGDs7hGEQNxKPmbfUB">
+			<tr:Parameters>
+			<tr:Parameter ID = 'p-4846b1b9-fdc7-11ee-844b-dc4a3e66df51' name = 'CAN Command'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>053101FE3000</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			</tr:Parameters>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>StringValueTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='63'/>
+					<ts:TotalTime value='0.0248392'/>
+					<ts:ModuleTime value='0.0247081'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-4846b1b8-fdc7-11ee-844b-dc4a3e66df51" name = "String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2400">
+						<c:Value>18DAF254</c:Value>
+					</c:Datum>
+				</tr:TestData>
+				<tr:TestLimits>
+					<tr:Limits>
+						<c:Expected comparator = "CIEQ">
+							<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+								<c:Value>18DAF254</c:Value>
+							</c:Datum>
+						</c:Expected>
+					</tr:Limits>
+				</tr:TestLimits>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b1ba-fdc7-11ee-844b-dc4a3e66df51" name = "ID String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DAF254</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b1bb-fdc7-11ee-844b-dc4a3e66df51" name = "Data String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>00097101FE300044151500FF</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b1bc-fdc7-11ee-844b-dc4a3e66df51" name = "Timestamp">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>4/18/2024 3:04:35.237 PM</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:SessionAction ID = "18604" name = "Wait 1 sec" startDateTime = "2024-04-18T15:04:35.237"  endDateTime = "2024-04-18T15:04:36.737"  testReferenceID="ID#:03nPsCfw7hGEQ9xKPmbfUB">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Wait</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='65'/>
+					<ts:TotalTime value='1.5006'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:Test ID = "18605" name = "Test Hall Test 3" startDateTime = "2024-04-18T15:04:36.740"  endDateTime = "2024-04-18T15:04:36.754"  testReferenceID="ID#:V1AYXGDs7hGEQNxKPmbfUB">
+			<tr:Parameters>
+			<tr:Parameter ID = 'p-4846b1be-fdc7-11ee-844b-dc4a3e66df51' name = 'CAN Command'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>053101FE3000</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			</tr:Parameters>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>StringValueTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='66'/>
+					<ts:TotalTime value='0.0141985'/>
+					<ts:ModuleTime value='0.0141316'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-4846b1bd-fdc7-11ee-844b-dc4a3e66df51" name = "String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2400">
+						<c:Value>18DAF254</c:Value>
+					</c:Datum>
+				</tr:TestData>
+				<tr:TestLimits>
+					<tr:Limits>
+						<c:Expected comparator = "CIEQ">
+							<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+								<c:Value>18DAF254</c:Value>
+							</c:Datum>
+						</c:Expected>
+					</tr:Limits>
+				</tr:TestLimits>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b1bf-fdc7-11ee-844b-dc4a3e66df51" name = "ID String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DAF254</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b1c0-fdc7-11ee-844b-dc4a3e66df51" name = "Data String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>00097101FE300044551500FF</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b1c1-fdc7-11ee-844b-dc4a3e66df51" name = "Timestamp">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>4/18/2024 3:04:36.774 PM</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:SessionAction ID = "18606" name = "DAQ Passive Lock Close" startDateTime = "2024-04-18T15:04:36.766"  endDateTime = "2024-04-18T15:04:36.771"  testReferenceID="ID#:gAJP0fm57hGENtxKPmbfUB">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>Action</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='68'/>
+					<ts:TotalTime value='0.0059532'/>
+					<ts:ModuleTime value='0.0059265'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "18607" name = "Wait" startDateTime = "2024-04-18T15:04:36.774"  endDateTime = "2024-04-18T15:04:37.025"  testReferenceID="ID#:0TqxgxW67hGENtxKPmbfUB">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Wait</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='69'/>
+					<ts:TotalTime value='0.250513'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:Test ID = "18608" name = "Test Digital Input" startDateTime = "2024-04-18T15:04:37.030"  endDateTime = "2024-04-18T15:04:37.053"  testReferenceID="ID#:0s1HeRW67hGENtxKPmbfUB">
+			<tr:Parameters>
+			<tr:Parameter ID = 'p-4846b1c3-fdc7-11ee-844b-dc4a3e66df51' name = 'CAN Command'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>053101FE3000</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			<tr:Parameter ID = 'p-4846b1c4-fdc7-11ee-844b-dc4a3e66df51' name = 'ID Response'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DAF254</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			<tr:Parameter ID = 'p-4846b1c5-fdc7-11ee-844b-dc4a3e66df51' name = 'ID Request'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DA54F2</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			</tr:Parameters>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>StringValueTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='70'/>
+					<ts:LoopingProperties>
+						<ts:NumLoops value='1' xsi:type='c:double'/>
+						<ts:NumPassed value='1' xsi:type='c:double'/>
+						<ts:NumFailed value='0' xsi:type='c:double'/>
+						<ts:EndingLoopIndex value='1' xsi:type='c:double'/>
+					</ts:LoopingProperties>
+					<ts:TotalTime value='0.02317'/>
+					<ts:ModuleTime value='0.0230153'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-4846b1c2-fdc7-11ee-844b-dc4a3e66df51" name = "String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2400">
+						<c:Value>00097101FE300044551500FF</c:Value>
+					</c:Datum>
+				</tr:TestData>
+				<tr:Extension>
+					<ts:TSLimitProperties>
+						<ts:IsComparisonTypeLog value = 'true'/>
+					</ts:TSLimitProperties>
+				</tr:Extension>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b1c6-fdc7-11ee-844b-dc4a3e66df51" name = "ID String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DAF254</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b1c7-fdc7-11ee-844b-dc4a3e66df51" name = "Data String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>00097101FE300044551500FF</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b1c8-fdc7-11ee-844b-dc4a3e66df51" name = "Timestamp">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>4/18/2024 3:04:37.073 PM</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:SessionAction ID = "18609" name = "DAQ Passive Lock Open" startDateTime = "2024-04-18T15:04:37.056"  endDateTime = "2024-04-18T15:04:37.064"  testReferenceID="ID#:lZ6BORW67hGENtxKPmbfUB">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>Action</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='71'/>
+					<ts:TotalTime value='0.0077535'/>
+					<ts:ModuleTime value='0.0077206'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "18610" name = "Wait" startDateTime = "2024-04-18T15:04:37.066"  endDateTime = "2024-04-18T15:04:37.317"  testReferenceID="ID#:xzBkjhW67hGENtxKPmbfUB">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Wait</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='72'/>
+					<ts:TotalTime value='0.251271'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "18611" name = "DAQ Crash Signal Close" startDateTime = "2024-04-18T15:04:37.321"  endDateTime = "2024-04-18T15:04:37.333"  testReferenceID="ID#:lJ6BORW67hGENtxKPmbfUB">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>Action</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='73'/>
+					<ts:TotalTime value='0.0118873'/>
+					<ts:ModuleTime value='0.0118388'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "18612" name = "Wait" startDateTime = "2024-04-18T15:04:37.336"  endDateTime = "2024-04-18T15:04:37.587"  testReferenceID="ID#:17cxIfq57hGENtxKPmbfUB">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Wait</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='74'/>
+					<ts:TotalTime value='0.250994'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:Test ID = "18613" name = "Test Digital Input" startDateTime = "2024-04-18T15:04:37.591"  endDateTime = "2024-04-18T15:04:37.603"  testReferenceID="ID#:zDoZG+G27hGENNxKPmbfUB">
+			<tr:Parameters>
+			<tr:Parameter ID = 'p-4846b1ca-fdc7-11ee-844b-dc4a3e66df51' name = 'CAN Command'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>053101FE3000</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			<tr:Parameter ID = 'p-4846b1cb-fdc7-11ee-844b-dc4a3e66df51' name = 'ID Response'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DAF254</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			<tr:Parameter ID = 'p-4846b1cc-fdc7-11ee-844b-dc4a3e66df51' name = 'ID Request'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DA54F2</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			</tr:Parameters>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>StringValueTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='75'/>
+					<ts:LoopingProperties>
+						<ts:NumLoops value='1' xsi:type='c:double'/>
+						<ts:NumPassed value='1' xsi:type='c:double'/>
+						<ts:NumFailed value='0' xsi:type='c:double'/>
+						<ts:EndingLoopIndex value='1' xsi:type='c:double'/>
+					</ts:LoopingProperties>
+					<ts:TotalTime value='0.0118296'/>
+					<ts:ModuleTime value='0.0117326'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-4846b1c9-fdc7-11ee-844b-dc4a3e66df51" name = "String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2400">
+						<c:Value>00097101FE300044551500FF</c:Value>
+					</c:Datum>
+				</tr:TestData>
+				<tr:Extension>
+					<ts:TSLimitProperties>
+						<ts:IsComparisonTypeLog value = 'true'/>
+					</ts:TSLimitProperties>
+				</tr:Extension>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b1cd-fdc7-11ee-844b-dc4a3e66df51" name = "ID String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DAF254</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b1ce-fdc7-11ee-844b-dc4a3e66df51" name = "Data String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>00097101FE300044551500FF</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b1cf-fdc7-11ee-844b-dc4a3e66df51" name = "Timestamp">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>4/18/2024 3:04:37.622 PM</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:SessionAction ID = "18614" name = "DAQ Crash Signal Open" startDateTime = "2024-04-18T15:04:37.605"  endDateTime = "2024-04-18T15:04:37.611"  testReferenceID="ID#:TCdmDPq57hGENtxKPmbfUB">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>Action</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='76'/>
+					<ts:TotalTime value='0.0061043'/>
+					<ts:ModuleTime value='0.0060793'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:Test ID = "18615" name = "Test Program SBC" startDateTime = "2024-04-18T15:04:37.612"  endDateTime = "2024-04-18T15:04:37.628"  testReferenceID="ID#:kmlJLqCF7hGEH9xKPmbfUB">
+			<tr:Parameters>
+			<tr:Parameter ID = 'p-4846b1d1-fdc7-11ee-844b-dc4a3e66df51' name = 'CAN Command'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>053101FE5301</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			</tr:Parameters>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>StringValueTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='77'/>
+					<ts:TotalTime value='0.01533'/>
+					<ts:ModuleTime value='0.0152882'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-4846b1d0-fdc7-11ee-844b-dc4a3e66df51" name = "String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2400">
+						<c:Value>057101FE5300</c:Value>
+					</c:Datum>
+				</tr:TestData>
+				<tr:TestLimits>
+					<tr:Limits>
+						<c:Expected comparator = "CIEQ">
+							<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+								<c:Value>057101FE5300</c:Value>
+							</c:Datum>
+						</c:Expected>
+					</tr:Limits>
+				</tr:TestLimits>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b1d2-fdc7-11ee-844b-dc4a3e66df51" name = "ID String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DAF254</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b1d3-fdc7-11ee-844b-dc4a3e66df51" name = "Data String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>057101FE5300</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b1d4-fdc7-11ee-844b-dc4a3e66df51" name = "Timestamp">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>4/18/2024 3:04:37.647 PM</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:Test ID = "18616" name = "ECU Hard Reset" startDateTime = "2024-04-18T15:04:37.630"  endDateTime = "2024-04-18T15:04:37.644"  testReferenceID="ID#:k2lJLqCF7hGEH9xKPmbfUB">
+			<tr:Parameters>
+			<tr:Parameter ID = 'p-4846b1d6-fdc7-11ee-844b-dc4a3e66df51' name = 'CAN Command'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>063101FE200100</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			</tr:Parameters>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>StringValueTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='78'/>
+					<ts:TotalTime value='0.0140592'/>
+					<ts:ModuleTime value='0.0140155'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-4846b1d5-fdc7-11ee-844b-dc4a3e66df51" name = "String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2400">
+						<c:Value>047101FE20</c:Value>
+					</c:Datum>
+				</tr:TestData>
+				<tr:TestLimits>
+					<tr:Limits>
+						<c:Expected comparator = "CIEQ">
+							<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+								<c:Value>047101FE20</c:Value>
+							</c:Datum>
+						</c:Expected>
+					</tr:Limits>
+				</tr:TestLimits>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b1d7-fdc7-11ee-844b-dc4a3e66df51" name = "ID String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DAF254</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b1d8-fdc7-11ee-844b-dc4a3e66df51" name = "Data String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>047101FE20</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b1d9-fdc7-11ee-844b-dc4a3e66df51" name = "Timestamp">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>4/18/2024 3:04:37.662 PM</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:SessionAction ID = "18617" name = "Wait for UUT" startDateTime = "2024-04-18T15:04:37.645"  endDateTime = "2024-04-18T15:04:38.646"  testReferenceID="ID#:OuvUFZGF7hGEH9xKPmbfUB">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Wait</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='79'/>
+					<ts:TotalTime value='1.00039'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:Test ID = "18618" name = "Test Enter Brose EOL Ext Session" startDateTime = "2024-04-18T15:04:38.648"  endDateTime = "2024-04-18T15:04:38.660"  testReferenceID="ID#:Ghkq+qCF7hGEH9xKPmbfUB">
+			<tr:Parameters>
+			<tr:Parameter ID = 'p-4846b1db-fdc7-11ee-844b-dc4a3e66df51' name = 'CAN Command'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>021061</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			</tr:Parameters>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>StringValueTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='80'/>
+					<ts:TotalTime value='0.0116725'/>
+					<ts:ModuleTime value='0.0116239'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-4846b1da-fdc7-11ee-844b-dc4a3e66df51" name = "String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2400">
+						<c:Value>065061003201F4</c:Value>
+					</c:Datum>
+				</tr:TestData>
+				<tr:TestLimits>
+					<tr:Limits>
+						<c:Expected comparator = "CIEQ">
+							<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+								<c:Value>065061003201F4</c:Value>
+							</c:Datum>
+						</c:Expected>
+					</tr:Limits>
+				</tr:TestLimits>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b1dc-fdc7-11ee-844b-dc4a3e66df51" name = "ID String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DAF254</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b1dd-fdc7-11ee-844b-dc4a3e66df51" name = "Data String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>065061003201F4</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b1de-fdc7-11ee-844b-dc4a3e66df51" name = "Timestamp">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>4/18/2024 3:04:38.678 PM</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:Test ID = "18619" name = "Test Read/Erase DTC" startDateTime = "2024-04-18T15:04:38.662"  endDateTime = "2024-04-18T15:04:38.677"  testReferenceID="ID#:RAmngb6a7hGEKtxKPmbfUB">
+			<tr:Parameters>
+			<tr:Parameter ID = 'p-4846b1e0-fdc7-11ee-844b-dc4a3e66df51' name = 'CAN Command'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>03FE2B01</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			</tr:Parameters>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>StringValueTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='81'/>
+					<ts:TotalTime value='0.015481'/>
+					<ts:ModuleTime value='0.0154291'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-4846b1df-fdc7-11ee-844b-dc4a3e66df51" name = "String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2400">
+						<c:Value>037FFE11</c:Value>
+					</c:Datum>
+				</tr:TestData>
+				<tr:Extension>
+					<ts:TSLimitProperties>
+						<ts:IsComparisonTypeLog value = 'true'/>
+					</ts:TSLimitProperties>
+				</tr:Extension>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b1e1-fdc7-11ee-844b-dc4a3e66df51" name = "ID String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DAF254</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b1e2-fdc7-11ee-844b-dc4a3e66df51" name = "Data String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>037FFE11</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b1e3-fdc7-11ee-844b-dc4a3e66df51" name = "Timestamp">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>4/18/2024 3:04:38.695 PM</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:Test ID = "18620" name = "Test Sleep Request" startDateTime = "2024-04-18T15:04:38.679"  endDateTime = "2024-04-18T15:04:38.693"  testReferenceID="ID#:J0+dUaCF7hGEH9xKPmbfUB">
+			<tr:Parameters>
+			<tr:Parameter ID = 'p-4846b1e5-fdc7-11ee-844b-dc4a3e66df51' name = 'CAN Command'>
+				<tr:Data>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>063101FE2101FF</c:Value>
+					</c:Datum>
+				</tr:Data>
+			</tr:Parameter>
+			</tr:Parameters>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>StringValueTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='82'/>
+					<ts:TotalTime value='0.0141721'/>
+					<ts:ModuleTime value='0.0140791'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-4846b1e4-fdc7-11ee-844b-dc4a3e66df51" name = "String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2400">
+						<c:Value>047101FE21</c:Value>
+					</c:Datum>
+				</tr:TestData>
+				<tr:TestLimits>
+					<tr:Limits>
+						<c:Expected comparator = "CIEQ">
+							<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+								<c:Value>047101FE21</c:Value>
+							</c:Datum>
+						</c:Expected>
+					</tr:Limits>
+				</tr:TestLimits>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b1e6-fdc7-11ee-844b-dc4a3e66df51" name = "ID String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>18DAF254</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b1e7-fdc7-11ee-844b-dc4a3e66df51" name = "Data String">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>047101FE21</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b1e8-fdc7-11ee-844b-dc4a3e66df51" name = "Timestamp">
+				<tr:TestData>
+					<c:Datum xsi:type="ts:TS_string" flags = "0x2000">
+						<c:Value>4/18/2024 3:04:38.713 PM</c:Value>
+					</c:Datum>
+				</tr:TestData>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:SessionAction ID = "18621" name = "Wait" startDateTime = "2024-04-18T15:04:38.695"  endDateTime = "2024-04-18T15:04:38.795"  testReferenceID="ID#:4I93Y+Gd7hGELtxKPmbfUB">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Wait</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='83'/>
+					<ts:TotalTime value='0.100533'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:Test ID = "18622" name = "Sleep Current Measurement" startDateTime = "2024-04-18T15:04:38.799"  endDateTime = "2024-04-18T15:04:38.829"  testReferenceID="ID#:aaWpAuGd7hGELtxKPmbfUB">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NumericLimitTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='84'/>
+					<ts:TotalTime value='0.0304366'/>
+					<ts:ModuleTime value='0.0303331'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-4846b1e9-fdc7-11ee-844b-dc4a3e66df51" name = "Numeric">
+				<tr:TestData>
+					<c:Datum value = "0.0796" xsi:type="ts:TS_double" nonStandardUnit="I" flags = "0x2400"/>
+				</tr:TestData>
+				<tr:TestLimits>
+					<tr:Limits>
+						<c:LimitPair operator = "AND">
+							<c:Limit comparator = "GE">
+								<c:Datum nonStandardUnit = "I" value = "0.045" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+							<c:Limit comparator = "LE">
+								<c:Datum nonStandardUnit = "I" value = "0.12" xsi:type="ts:TS_double" flags = "0x0000"/>
+							</c:Limit>
+						</c:LimitPair>
+						<c:Extension>
+							<ts:TSLimitProperties>
+								<ts:RawLimits>
+									<ts:Low value = "0.045" xsi:type="c:double" />
+									<ts:High value = "0.12" xsi:type="c:double" />
+								</ts:RawLimits>
+							</ts:TSLimitProperties>
+						</c:Extension>
+					</tr:Limits>
+				</tr:TestLimits>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:Test name="UUT PowerOFF" ID="18623" testReferenceID="ID#:Gg7SF8WF7hGEIdxKPmbfUB" startDateTime = "2024-04-18T15:04:38.833"  endDateTime = "2024-04-18T15:04:40.919" >
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>SequenceCall</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='85'/>
+					<ts:TotalTime value='2.08622'/>
+					<ts:ModuleTime value='2.08615'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value="Passed" />
+		</tr:Test>
+		<tr:SessionAction ID = "18624" name = "Init short" startDateTime = "2024-04-18T15:04:40.952"  endDateTime = "2024-04-18T15:04:40.960"  testReferenceID="ID#:v5hvOMiF7hGEIdxKPmbfUB">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>Action</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='86'/>
+					<ts:TotalTime value='0.007611'/>
+					<ts:ModuleTime value='0.0075764'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:SessionAction ID = "18625" name = "Delete short" startDateTime = "2024-04-18T15:04:43.967"  endDateTime = "2024-04-18T15:04:43.975"  testReferenceID="ID#:1OWAE0KG7hGEI9xKPmbfUB">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>Action</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='88'/>
+					<ts:TotalTime value='0.008004'/>
+					<ts:ModuleTime value='0.0079739'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:Test ID = "18626" name = "SuperCap Test" startDateTime = "2024-04-18T15:04:44.979"  endDateTime = "2024-04-18T15:04:45.626"  testReferenceID="ID#:bGXk1M+F7hGEIdxKPmbfUB">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NumericLimitTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='90'/>
+					<ts:LoopingProperties>
+						<ts:NumLoops value='1' xsi:type='c:double'/>
+						<ts:NumPassed value='1' xsi:type='c:double'/>
+						<ts:NumFailed value='0' xsi:type='c:double'/>
+						<ts:EndingLoopIndex value='1' xsi:type='c:double'/>
+					</ts:LoopingProperties>
+					<ts:TotalTime value='0.647077'/>
+					<ts:ModuleTime value='0.646879'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-4846b1ea-fdc7-11ee-844b-dc4a3e66df51" name = "Numeric">
+				<tr:TestData>
+					<c:Datum value = "0.0001011" xsi:type="ts:TS_double" nonStandardUnit="V" flags = "0x2400"/>
+				</tr:TestData>
+				<tr:TestLimits>
+					<tr:Limits>
+						<c:SingleLimit comparator = "LT">
+							<c:Datum nonStandardUnit = "V" value = "0.1" xsi:type="ts:TS_double" flags = "0x0000"/>
+						</c:SingleLimit>
+					</tr:Limits>
+				</tr:TestLimits>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b1eb-fdc7-11ee-844b-dc4a3e66df51" name = "Measurement">
+				<tr:TestData>
+					<c:Datum value = "0.0001011" xsi:type="ts:TS_double" flags = "0x2000"/>
+				</tr:TestData>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:Test ID = "18627" name = "SuperCap Test (Loop Index:0)"  startDateTime = "2024-04-18T15:04:44.979"  endDateTime = "2024-04-18T15:04:45.626"  testReferenceID="ID#:bGXk1M+F7hGEIdxKPmbfUB">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NumericLimitTest</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='1'/>
+					<ts:Index value='90'/>
+					<ts:LoopingProperties>
+						<ts:LoopIndex value='0' xsi:type='c:double'/>
+					</ts:LoopingProperties>
+					<ts:TotalTime value='0.646938'/>
+					<ts:ModuleTime value='0.646879'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "Passed" />
+			<tr:TestResult ID = "tr-4846b1ec-fdc7-11ee-844b-dc4a3e66df51" name = "Numeric">
+				<tr:TestData>
+					<c:Datum value = "0.0001011" xsi:type="ts:TS_double" nonStandardUnit="V" flags = "0x2400"/>
+				</tr:TestData>
+				<tr:TestLimits>
+					<tr:Limits>
+						<c:SingleLimit comparator = "LT">
+							<c:Datum nonStandardUnit = "V" value = "0.1" xsi:type="ts:TS_double" flags = "0x0000"/>
+						</c:SingleLimit>
+					</tr:Limits>
+				</tr:TestLimits>
+			</tr:TestResult>
+			<tr:TestResult ID = "tr-4846b1ed-fdc7-11ee-844b-dc4a3e66df51" name = "Measurement">
+				<tr:TestData>
+					<c:Datum value = "0.0001011" xsi:type="ts:TS_double" flags = "0x2000"/>
+				</tr:TestData>
+			</tr:TestResult>
+		</tr:Test>
+		<tr:SessionAction ID = "18628" name = "End" startDateTime = "2024-04-18T15:04:45.633"  endDateTime = "2024-04-18T15:04:45.633"  testReferenceID="ID#:qZmO6bP97hGES9xKPmbfUB">
+			<tr:Data>
+				<c:Collection>
+					<c:Item name = "ReportText">
+						<c:Datum xsi:type="ts:TS_string" flags = "0x400000">
+							<c:Value>(If)</c:Value>
+						</c:Datum>
+					</c:Item>
+				</c:Collection>
+			</tr:Data>
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>NI_Flow_End</ts:StepType>
+					<ts:StepGroup>Main</ts:StepGroup>
+					<ts:BlockLevel value='0'/>
+					<ts:Index value='92'/>
+					<ts:TotalTime value='3.95e-05'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:ActionOutcome value = "Done" />
+		</tr:SessionAction>
+		<tr:Test name="UUT PowerOFF" ID="18629" testReferenceID="ID#:3XW3f9CF7hGEIdxKPmbfUB" startDateTime = "2024-04-18T15:04:45.648"  endDateTime = "2024-04-18T15:04:45.648" >
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>SequenceCall</ts:StepType>
+					<ts:StepGroup>Cleanup</ts:StepGroup>
+					<ts:BlockLevel value='0'/>
+					<ts:Index value='1'/>
+					<ts:TotalTime value='1.7e-05'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value="UserDefined" qualifier="Skipped" />
+		</tr:Test>
+		<tr:Test ID = "18630" name = "Init short" startDateTime = "2024-04-18T15:04:45.653"  endDateTime = "2024-04-18T15:04:45.653"  testReferenceID="ID#:o6g1RniQ7hGEJtxKPmbfUB">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>Action</ts:StepType>
+					<ts:StepGroup>Cleanup</ts:StepGroup>
+					<ts:BlockLevel value='0'/>
+					<ts:Index value='3'/>
+					<ts:TotalTime value='1.1e-05'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "UserDefined" qualifier= "Skipped" />
+		</tr:Test>
+		<tr:Test ID = "18631" name = "Delete short" startDateTime = "2024-04-18T15:04:45.657"  endDateTime = "2024-04-18T15:04:45.657"  testReferenceID="ID#:pag1RniQ7hGEJtxKPmbfUB">
+			<tr:Extension>
+				<ts:TSStepProperties>
+					<ts:StepType>Action</ts:StepType>
+					<ts:StepGroup>Cleanup</ts:StepGroup>
+					<ts:BlockLevel value='0'/>
+					<ts:Index value='5'/>
+					<ts:TotalTime value='1e-05'/>
+				</ts:TSStepProperties>
+			</tr:Extension>
+			<tr:Outcome value = "UserDefined" qualifier= "Skipped" />
+		</tr:Test>
+	</tr:ResultSet>
+	<tr:TestProgram>
+		<c:SerialNumber>
+			0952DENG009
+		</c:SerialNumber>
+		<tr:Configuration>
+			<c:Collection xsi:type="ts:TS_Collection" flags = "0x0000">
+				<c:Item name = "IncludeTSExtensionElements">
+					<c:Datum value = "true" xsi:type="ts:TS_boolean" flags = "0x0000"/>
+				</c:Item>
+				<c:Item name = "IncludeAttributes">
+					<c:Datum value = "false" xsi:type="ts:TS_boolean" flags = "0x0000"/>
+				</c:Item>
+				<c:Item name = "IncludeLimits">
+					<c:Datum value = "true" xsi:type="ts:TS_boolean" flags = "0x0000"/>
+				</c:Item>
+				<c:Item name = "IncludeMeasurements">
+					<c:Datum value = "true" xsi:type="ts:TS_boolean" flags = "0x0000"/>
+				</c:Item>
+				<c:Item name = "IncludeArrayMeasurement">
+					<c:Datum value = "2" xsi:type="ts:TS_double" flags = "0x0000"/>
+				</c:Item>
+				<c:Item name = "ArrayMeasurementFilter">
+					<c:Datum value = "3" xsi:type="ts:TS_double" flags = "0x0000"/>
+				</c:Item>
+				<c:Item name = "ArrayMeasurementMax">
+					<c:Datum value = "100" xsi:type="ts:TS_double" flags = "0x0000"/>
+				</c:Item>
+				<c:Item name = "IncludeTimes">
+					<c:Datum value = "true" xsi:type="ts:TS_boolean" flags = "0x0000"/>
+				</c:Item>
+				<c:Item name = "Format">
+					<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+						<c:Value>xml</c:Value>
+					</c:Datum>
+				</c:Item>
+				<c:Item name = "NumericFormat">
+					<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+						<c:Value>%$.13g</c:Value>
+					</c:Datum>
+				</c:Item>
+				<c:Item name = "ResultFilterExpression">
+					<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+						<c:Value>True</c:Value>
+					</c:Datum>
+				</c:Item>
+				<c:Item name = "GeneratePath">
+					<c:Datum value = "true" xsi:type="ts:TS_boolean" flags = "0x0000"/>
+				</c:Item>
+				<c:Item name = "UseTemporaryFile">
+					<c:Datum value = "false" xsi:type="ts:TS_boolean" flags = "0x0000"/>
+				</c:Item>
+				<c:Item name = "UseSequenceFileNameAsPrefix">
+					<c:Datum value = "true" xsi:type="ts:TS_boolean" flags = "0x0000"/>
+				</c:Item>
+				<c:Item name = "AddTimeAndDateToFileName">
+					<c:Datum value = "true" xsi:type="ts:TS_boolean" flags = "0x0000"/>
+				</c:Item>
+				<c:Item name = "NewFileNameForEachUUT">
+					<c:Datum value = "false" xsi:type="ts:TS_boolean" flags = "0x0000"/>
+				</c:Item>
+				<c:Item name = "ForceFileNameToBeUnique">
+					<c:Datum value = "true" xsi:type="ts:TS_boolean" flags = "0x0000"/>
+				</c:Item>
+				<c:Item name = "AppendToFileIfItExists">
+					<c:Datum value = "false" xsi:type="ts:TS_boolean" flags = "0x0000"/>
+				</c:Item>
+				<c:Item name = "DirectoryType">
+					<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+						<c:Value>SequenceFileDirectory</c:Value>
+					</c:Datum>
+				</c:Item>
+				<c:Item name = "Directory">
+					<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+						<c:Value></c:Value>
+					</c:Datum>
+				</c:Item>
+				<c:Item name = "BaseName">
+					<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+						<c:Value>Report</c:Value>
+					</c:Datum>
+				</c:Item>
+				<c:Item name = "UseFormatForExtension">
+					<c:Datum value = "true" xsi:type="ts:TS_boolean" flags = "0x0000"/>
+				</c:Item>
+				<c:Item name = "Extension">
+					<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+						<c:Value></c:Value>
+					</c:Datum>
+				</c:Item>
+				<c:Item name = "ReportFilePath">
+					<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+						<c:Value></c:Value>
+					</c:Datum>
+				</c:Item>
+				<c:Item name = "DisableReportGeneration">
+					<c:Datum value = "false" xsi:type="ts:TS_boolean" flags = "0x0000"/>
+				</c:Item>
+				<c:Item name = "IncludeStepResults">
+					<c:Datum value = "true" xsi:type="ts:TS_boolean" flags = "0x0000"/>
+				</c:Item>
+				<c:Item name = "BodyGenerator">
+					<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+						<c:Value>DLL</c:Value>
+					</c:Datum>
+				</c:Item>
+				<c:Item name = "SaveTransformedHtmlForXmlReport">
+					<c:Datum value = "true" xsi:type="ts:TS_boolean" flags = "0x0000"/>
+				</c:Item>
+				<c:Item name = "Colors">
+					<c:Collection xsi:type="ts:TS_Collection" flags = "0x0000">
+						<c:Item name = "LabelBg">
+							<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+								<c:Value>#FFFFFF</c:Value>
+							</c:Datum>
+						</c:Item>
+						<c:Item name = "ValueBg">
+							<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+								<c:Value>#32FFFF</c:Value>
+							</c:Datum>
+						</c:Item>
+						<c:Item name = "UUTSeparator">
+							<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+								<c:Value>#0000E0</c:Value>
+							</c:Datum>
+						</c:Item>
+						<c:Item name = "HeaderSeparator">
+							<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+								<c:Value>#8000CC</c:Value>
+							</c:Datum>
+						</c:Item>
+						<c:Item name = "TableBorder">
+							<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+								<c:Value>#000000</c:Value>
+							</c:Datum>
+						</c:Item>
+						<c:Item name = "MainBg">
+							<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+								<c:Value>#00C4C4</c:Value>
+							</c:Datum>
+						</c:Item>
+						<c:Item name = "SetupBg">
+							<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+								<c:Value>#FF8000</c:Value>
+							</c:Datum>
+						</c:Item>
+						<c:Item name = "CleanupBg">
+							<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+								<c:Value>#ADD8E6</c:Value>
+							</c:Datum>
+						</c:Item>
+						<c:Item name = "ReportTextBg">
+							<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+								<c:Value>#FF32CC</c:Value>
+							</c:Datum>
+						</c:Item>
+						<c:Item name = "Terminated">
+							<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+								<c:Value>#000080</c:Value>
+							</c:Datum>
+						</c:Item>
+						<c:Item name = "Failed">
+							<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+								<c:Value>#FF0000</c:Value>
+							</c:Datum>
+						</c:Item>
+						<c:Item name = "Error">
+							<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+								<c:Value>#FF0000</c:Value>
+							</c:Datum>
+						</c:Item>
+						<c:Item name = "Passed">
+							<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+								<c:Value>#008000</c:Value>
+							</c:Datum>
+						</c:Item>
+						<c:Item name = "Skipped">
+							<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+								<c:Value>#B98028</c:Value>
+							</c:Datum>
+						</c:Item>
+						<c:Item name = "Done">
+							<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+								<c:Value>#008000</c:Value>
+							</c:Datum>
+						</c:Item>
+						<c:Item name = "Running">
+							<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+								<c:Value>#FFCC33</c:Value>
+							</c:Datum>
+						</c:Item>
+						<c:Item name = "TerminatedBg">
+							<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+								<c:Value>#0000FF</c:Value>
+							</c:Datum>
+						</c:Item>
+						<c:Item name = "FailedBg">
+							<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+								<c:Value>#FF0000</c:Value>
+							</c:Datum>
+						</c:Item>
+						<c:Item name = "ErrorBg">
+							<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+								<c:Value>#FF0000</c:Value>
+							</c:Datum>
+						</c:Item>
+						<c:Item name = "PassedBg">
+							<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+								<c:Value>#00FF00</c:Value>
+							</c:Datum>
+						</c:Item>
+						<c:Item name = "SkippedBg">
+							<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+								<c:Value>#FFFF00</c:Value>
+							</c:Datum>
+						</c:Item>
+						<c:Item name = "DoneBg">
+							<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+								<c:Value>#00FFCC</c:Value>
+							</c:Datum>
+						</c:Item>
+						<c:Item name = "RunningBg">
+							<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+								<c:Value>#FFCC33</c:Value>
+							</c:Datum>
+						</c:Item>
+						<c:Item name = "FailureStackLabelBg">
+							<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+								<c:Value>#FF2020</c:Value>
+							</c:Datum>
+						</c:Item>
+						<c:Item name = "FailureStackValueBg">
+							<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+								<c:Value>#D0D0D0</c:Value>
+							</c:Datum>
+						</c:Item>
+						<c:Item name = "BatchHeadingBg">
+							<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+								<c:Value>#00C4C4</c:Value>
+							</c:Datum>
+						</c:Item>
+					</c:Collection>
+				</c:Item>
+				<c:Item name = "DateAndTimeFormat">
+					<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+						<c:Value>TimeFirst</c:Value>
+					</c:Datum>
+				</c:Item>
+				<c:Item name = "NewFileNameForEachBatch">
+					<c:Datum value = "false" xsi:type="ts:TS_boolean" flags = "0x0000"/>
+				</c:Item>
+				<c:Item name = "NewBatchFileNameForEachBatch">
+					<c:Datum value = "false" xsi:type="ts:TS_boolean" flags = "0x0000"/>
+				</c:Item>
+				<c:Item name = "NewFileNameForEachTestSocket">
+					<c:Datum value = "false" xsi:type="ts:TS_boolean" flags = "0x0000"/>
+				</c:Item>
+				<c:Item name = "StoreUUTReportWithBatchReport">
+					<c:Datum value = "true" xsi:type="ts:TS_boolean" flags = "0x0000"/>
+				</c:Item>
+				<c:Item name = "BatchBaseName">
+					<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+						<c:Value>BatchReport</c:Value>
+					</c:Datum>
+				</c:Item>
+				<c:Item name = "LabelSize">
+					<c:Datum value = "26" xsi:type="ts:TS_double" flags = "0x0000"/>
+				</c:Item>
+				<c:Item name = "RelStylesheetPath">
+					<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+						<c:Value>tr5_horizontal.xsl</c:Value>
+					</c:Datum>
+				</c:Item>
+				<c:Item name = "StylesheetPath">
+					<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+						<c:Value>C:\Program Files (x86)\National Instruments\TestStand 2022\Components\Models\TestStandModels\ATML\StyleSheets\tr5_horizontal.xsl</c:Value>
+					</c:Datum>
+				</c:Item>
+				<c:Item name = "StylesheetMRU">
+					<c:IndexedArray dimensions="[5]" lowerBounds="[0]" upperBounds="[4]" xsi:type="ts:TS_stringArray" flags = "0x0000">
+						<ts:Element position ="[0]">
+							<c:Value>horizontal.xsl</c:Value>
+						</ts:Element>
+						<ts:Element position ="[1]">
+							<c:Value>report.xsl</c:Value>
+						</ts:Element>
+						<ts:Element position ="[2]">
+							<c:Value>expand.xsl</c:Value>
+						</ts:Element>
+						<ts:Element position ="[3]">
+							<c:Value></c:Value>
+						</ts:Element>
+						<ts:Element position ="[4]">
+							<c:Value></c:Value>
+						</ts:Element>
+					</c:IndexedArray>
+				</c:Item>
+				<c:Item name = "ATMLStylesheetMRU">
+					<c:IndexedArray dimensions="[3]" lowerBounds="[0]" upperBounds="[2]" xsi:type="ts:TS_stringArray" flags = "0x0000">
+						<ts:Element position ="[0]">
+							<c:Value>TR_horizontal.xsl</c:Value>
+						</ts:Element>
+						<ts:Element position ="[1]">
+							<c:Value>trml.xsl</c:Value>
+						</ts:Element>
+						<ts:Element position ="[2]">
+							<c:Value></c:Value>
+						</ts:Element>
+					</c:IndexedArray>
+				</c:Item>
+				<c:Item name = "StoreStylesheetAbsolutePath">
+					<c:Datum value = "true" xsi:type="ts:TS_boolean" flags = "0x0000"/>
+				</c:Item>
+				<c:Item name = "UseOnTheFlyReporting">
+					<c:Datum value = "false" xsi:type="ts:TS_boolean" flags = "0x0000"/>
+				</c:Item>
+				<c:Item name = "PurgeOnTheFlyResults">
+					<c:Datum value = "false" xsi:type="ts:TS_boolean" flags = "0x0000"/>
+				</c:Item>
+				<c:Item name = "GeneratePDFReport">
+					<c:Datum value = "false" xsi:type="ts:TS_boolean" flags = "0x0000"/>
+				</c:Item>
+				<c:Item name = "IncludeStepResultComments">
+					<c:Datum value = "true" xsi:type="ts:TS_boolean" flags = "0x0000"/>
+				</c:Item>
+				<c:Item name = "UseLocalizedDecimalPoint">
+					<c:Datum value = "false" xsi:type="ts:TS_boolean" flags = "0x0000"/>
+				</c:Item>
+				<c:Item name = "ReportStyle">
+					<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+						<c:Value>atml5</c:Value>
+					</c:Datum>
+				</c:Item>
+				<c:Item name = "ReportFileSequentialModelExpression">
+					<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+						<c:Value>"$(ClientFileDir)\\$(ClientFileName)_Report[$(FileTime)][$(FileDate)]$(Unique).$(FileExtension)"</c:Value>
+					</c:Datum>
+				</c:Item>
+				<c:Item name = "ReportFileParallelModelExpression">
+					<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+						<c:Value>"$(ClientFileDir)\\$(ClientFileName)_Report[$(FileTime)][$(FileDate)]$(Unique).$(FileExtension)"</c:Value>
+					</c:Datum>
+				</c:Item>
+				<c:Item name = "ReportFileBatchModelExpression">
+					<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+						<c:Value>"$(ClientFileDir)\\$(ClientFileName)_BatchReport[$(FileTime)][$(FileDate)]$(Unique).$(FileExtension)"</c:Value>
+					</c:Datum>
+				</c:Item>
+				<c:Item name = "BatchFileBatchModelExpression">
+					<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+						<c:Value>"$(ClientFileDir)\\$(ClientFileName)_BatchReport[$(FileTime)][$(FileDate)]$(Unique).$(FileExtension)"</c:Value>
+					</c:Datum>
+				</c:Item>
+				<c:Item name = "NewFileNameForEachUUTStatus">
+					<c:Datum value = "false" xsi:type="ts:TS_boolean" flags = "0x0000"/>
+				</c:Item>
+				<c:Item name = "ReportPathMacroListString">
+					<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+						<c:Value></c:Value>
+					</c:Datum>
+				</c:Item>
+				<c:Item name = "BatchReportPathMacroListString">
+					<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+						<c:Value></c:Value>
+					</c:Datum>
+				</c:Item>
+				<c:Item name = "CheckIfMacroListIsUnchanged">
+					<c:Datum value = "true" xsi:type="ts:TS_boolean" flags = "0x0000"/>
+				</c:Item>
+				<c:Item name = "ATML5StylesheetMRU">
+					<c:IndexedArray dimensions="[5]" lowerBounds="[0]" upperBounds="[4]" xsi:type="ts:TS_stringArray" flags = "0x0000">
+						<ts:Element position ="[0]">
+							<c:Value>tr5_horizontal.xsl</c:Value>
+						</ts:Element>
+						<ts:Element position ="[1]">
+							<c:Value>tr5_report.xsl</c:Value>
+						</ts:Element>
+						<ts:Element position ="[2]">
+							<c:Value>tr5_expand.xsl</c:Value>
+						</ts:Element>
+						<ts:Element position ="[3]">
+							<c:Value></c:Value>
+						</ts:Element>
+						<ts:Element position ="[4]">
+							<c:Value></c:Value>
+						</ts:Element>
+					</c:IndexedArray>
+				</c:Item>
+				<c:Item name = "Atml_Rpt_Options">
+					<c:Collection xsi:type="ts:TS_Collection" flags = "0x0000">
+						<c:Item name = "AddReportText">
+							<c:Datum value = "true" xsi:type="ts:TS_boolean" flags = "0x0000"/>
+						</c:Item>
+						<c:Item name = "ExtensionDLLAbsolutePath">
+							<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+								<c:Value></c:Value>
+							</c:Datum>
+						</c:Item>
+						<c:Item name = "TestResultsSchemaPath">
+							<c:Datum xsi:type="ts:TS_string" flags = "0x0000">
+								<c:Value></c:Value>
+							</c:Datum>
+						</c:Item>
+					</c:Collection>
+				</c:Item>
+				<c:Item name = "ATML6StylesheetMRU">
+					<c:IndexedArray dimensions="[5]" lowerBounds="[0]" upperBounds="[4]" xsi:type="ts:TS_stringArray" flags = "0x0000">
+						<ts:Element position ="[0]">
+							<c:Value>tr6_horizontal.xsl</c:Value>
+						</ts:Element>
+						<ts:Element position ="[1]">
+							<c:Value>tr6_report.xsl</c:Value>
+						</ts:Element>
+						<ts:Element position ="[2]">
+							<c:Value>tr6_expand.xsl</c:Value>
+						</ts:Element>
+						<ts:Element position ="[3]">
+							<c:Value></c:Value>
+						</ts:Element>
+						<ts:Element position ="[4]">
+							<c:Value></c:Value>
+						</ts:Element>
+					</c:IndexedArray>
+				</c:Item>
+			</c:Collection>
+		</tr:Configuration>
+	</tr:TestProgram>
+	<tr:TestStation>
+		<c:SerialNumber>0952DENG009</c:SerialNumber>
+	</tr:TestStation>
+	<tr:UUT>
+		<c:SerialNumber>NONE</c:SerialNumber>
+	</tr:UUT>
+	<tr:Extension>
+		<ts:TSResultSetProperties>
+			<ts:NumOfResults value = '97'/>
+		</ts:TSResultSetProperties>
+	</tr:Extension>
+</trc:TestResults>
+</trc:TestResultsCollection>

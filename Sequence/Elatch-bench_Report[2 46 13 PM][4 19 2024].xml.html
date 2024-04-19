@@ -1,0 +1,627 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"><html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"><title> Report</title><style type="text/css">
+					body {font-family:VERDANA;color:#161617}
+					img {margin-right:5px;}
+					img.expandCollapseAll{width:26px; height:28px; border-style:none; cursor:pointer;}
+					img.expandCollapse{border-style:none; cursor:pointer}
+					table.uutTable{min-width: 30%; width: auto;font-size: 70%;}
+					table.uutTable td, th, tr{white-space:nowrap;padding:0.5em;vertical-align:text-top}
+					table.batchTable{width:80%;font-size: 70%;border-width:0.13em;border-style:solid;border-color:#D3D5D6;border-collapse:collapse;}
+					table.batchTable td, th, tr{border-width:1px;border-style:solid;border-color:#D3D5D6;white-space:normal;padding:0.5em;vertical-align:text-top;border-collapse:collapse;}
+					table.uutHrefTable{width:80%;font-size: 70%;border-width:0.13em;border-color:#D3D5D6;border-collapse:collapse;border-style:solid;}
+					table.uutHrefTable td, th, tr{border-width:0.13em;border-color:silver;border-collapse:collapse;border-style:solid;padding:0.5em;text-align:center;}
+					table.stepTable{width:auto;max-width:95%;font-size:70%;border-width:0.13em;border-color:#D3D5D6;border-collapse:collapse;border-style:solid;}
+					table.stepTable td, th, tr{width:auto;border-width:0.13em;border-color:#D3D5D6;border-collapse:collapse;border-style:solid;padding:0.5em;text-align:left;}					
+					hr.headerSeparator{text-align:left;height:0px;width:90%;margin-left:0px;border: none; border-bottom: 1px solid #D3D5D6}
+					hr.uutSeparator{text-align:left;height:0px;width:90%;margin-left:0px;color:#D3D5D6; border: none; border-bottom: 1px solid rgb(174, 176, 179)}
+					hr.batchSeparator{text-align:center;height:1px;width:90%;}
+					table.criticalFailureTable{width:50%;font-size: 70%;border-width:1px;border-style:solid;border-color:#D3D5D6;border-collapse:collapse;}
+					table.criticalFailureTable td, th{border-width:1px;border-style:solid;border-color:#D3D5D6;border-collapse:collapse;white-space:nowrap;padding:0.4em;vertical-align:text-top;}
+					table.criticalFailureTable td {text-align:left;}
+					table.criticalFailureTable th {text-align:center;}
+					span.stepText{font-size:94%;}
+					tr.hidden{display:none;}
+					img{margin:0px;padding:0px;}
+					</style><script type="text/javascript">
+					//		
+					var gStylesheetpath = "";	
+					/** A function to initialize the global variable with the stylesheet path**/	
+					setStylesheetPath = function(path)
+					{
+						gStylesheetpath = path;
+					}	
+					/** A function to return the image path depending on whether the file was packed using the XMLPack utility.
+					**/	
+					getImageAbsolutePath = function(imageFileName)
+					{
+						var path ="";	
+						path = gStylesheetpath +  imageFileName;
+						return path;	
+					}
+
+					var gExpandCollapseState = "collapsed";
+
+					/** An array cache of all divs in HTML body, this will calculate all expand collapse divs once and 
+					 store in this global array so that performance is improved for expand/collapse actions from second time**/
+					var gExpandCollapseImagesArray; 
+
+
+					/**Apply Expand/Collapse functionality for image element, this will be called by onClick event of img element
+					**/
+					expandCollapse = function(event)
+					{
+						var imgElem = event.target || event.srcElement;			
+						expandCollapseImageDiv(imgElem);
+					}
+
+					/**Apply Expand/Collapse functionality for div element which contains imgElem
+						imgElem - DOM object of img element
+					**/
+					expandCollapseImageDiv = function(imgElem)
+					{
+						var id = imgElem.className;
+						var expCollDiv = document.getElementById(id);
+						if(expCollDiv)
+						{
+							var imgSrc = imgElem.src;
+							var indexOfLastSlash  = imgSrc.lastIndexOf('/') + 1;
+							var imgPath = imgSrc.slice(0,indexOfLastSlash);
+							var imgName = imgSrc.slice(indexOfLastSlash);
+							if(expCollDiv.className == "expanded")
+							{
+								expCollDiv.className="collapsed";
+								expCollDiv.style.display="none";
+								imgName = imgName.replace("minus","plus");
+							}	
+							else
+							{
+								expCollDiv.className="expanded";
+								expCollDiv.style.display="block";
+								imgName = imgName.replace("plus","minus");
+							}	
+							imgElem.src=imgPath+imgName;
+						}
+					}
+
+					/**Change classname for DIV element, so that it is visible and expanded
+						imgElem - DOM object of img element
+					**/
+					expandImageDiv = function(imgElem)
+					{
+						var id = imgElem.className;
+						var expCollDiv = document.getElementById(id);
+						if(expCollDiv)
+						{
+							var imgSrc = imgElem.src;
+							var indexOfLastSlash  = imgSrc.lastIndexOf('/') + 1;
+							var imgPath = imgSrc.slice(0,indexOfLastSlash);
+							var imgName = imgSrc.slice(indexOfLastSlash);
+							expCollDiv.className="expanded";
+							expCollDiv.style.display="block";
+							imgName = imgName.replace("plus","minus");					
+							imgElem.src=imgPath+imgName;
+						}
+					}
+					/**Change classname for DIV element, so that it is hidden and collapsed
+						imgElem - DOM object of img element
+					**/
+					collapseImageDiv = function(imgElem)
+					{
+						var id = imgElem.className;
+						var expCollDiv = document.getElementById(id);
+						if(expCollDiv)
+						{
+							var imgSrc = imgElem.src;
+							var indexOfLastSlash  = imgSrc.lastIndexOf('/') + 1;
+							var imgPath = imgSrc.slice(0,indexOfLastSlash);
+							var imgName = imgSrc.slice(indexOfLastSlash);
+							expCollDiv.className="collapsed";
+							expCollDiv.style.display="none";
+							imgName = imgName.replace("minus","plus");	
+							imgElem.src=imgPath+imgName;
+						}
+					}
+					/**
+					* @constructor
+					*/
+					ImgCollection = function(imgArray) { this.imgArray= imgArray; 	this.state = "expanded"; };
+					
+					/** A High level expand/collapse function which will expand or collapse all the DIVs in HTML body 
+					**/
+					expandCollapseAll = function(event)
+					{
+						var rootImgElem = event.target || event.srcElement;		
+						var uniqueDivId = 	rootImgElem.className;
+						if(!gExpandCollapseImagesArray)
+						{
+							gExpandCollapseImagesArray =  new Array();
+						}						
+						if(!gExpandCollapseImagesArray[uniqueDivId])
+						{
+							var divElement = document.getElementById(uniqueDivId);						
+							gExpandCollapseImagesArray[uniqueDivId] = new ImgCollection(divElement.getElementsByTagName("img"));
+						}
+						var expandCollapseState = gExpandCollapseImagesArray[uniqueDivId].state;
+						var expandCollapseImagesArray = gExpandCollapseImagesArray[uniqueDivId].imgArray;
+						if (expandCollapseState == "expanded")
+						{
+							for(var i=0; i<expandCollapseImagesArray.length;++i)
+							{
+								var imgElem = expandCollapseImagesArray[i];
+								if (imgElem.className == "trExpanded")
+									collapseTRImg(imgElem);
+								else
+									collapseImageDiv(imgElem);
+							}
+							rootImgElem.src =getImageAbsolutePath("plus.png");
+							collapseImageDiv(rootImgElem);
+							expandCollapseState="collapsed";
+						}
+						else
+						{
+							for(var i=0; i<expandCollapseImagesArray.length;++i)
+							{
+								var imgElem = expandCollapseImagesArray[i];
+								if (imgElem.className == "trExpanded")
+									expandTRImg(imgElem);
+								else
+									expandImageDiv(imgElem);
+							}
+							rootImgElem.src =getImageAbsolutePath("minus.png");
+							expandImageDiv(rootImgElem);
+							expandCollapseState="expanded";
+						}
+						gExpandCollapseImagesArray[uniqueDivId].state = expandCollapseState;
+					}
+					
+					/** A expand function to expand all divisions during PDF Generation
+					**/
+					expandAll = function()
+					{
+						if(!gExpandCollapseImagesArray)
+						{
+							gExpandCollapseImagesArray =  new Array();
+						}
+						
+						var imgElems = document.getElementsByTagName("img");
+						
+						for (var i=0; i<imgElems.length; ++i)
+						{
+							var uniqueDivId = imgElems[i].className;
+							if (uniqueDivId.startsWith("MainSequence_"))
+							{
+								if(!gExpandCollapseImagesArray[uniqueDivId])
+								{
+									var divElement = document.getElementById(uniqueDivId);						
+									gExpandCollapseImagesArray[uniqueDivId] = new ImgCollection(divElement.getElementsByTagName("img"));
+								}
+								
+								var expandCollapseState = imgElems[i].state;
+								var expandCollapseImagesArray = gExpandCollapseImagesArray[uniqueDivId].imgArray;
+								
+								for(var j=0; j<expandCollapseImagesArray.length;++j)
+								{
+									var imgElem = expandCollapseImagesArray[j];
+									if (imgElem.className == "trExpanded")
+										expandTRImg(imgElem);
+									else
+										expandImageDiv(imgElem);
+								}
+								imgElems[i].src =getImageAbsolutePath("minus.png");
+								expandImageDiv(imgElems[i]);
+								expandCollapseState="expanded";
+								imgElems[i].state = expandCollapseState;
+								imgElems[i].alt = "";
+							}
+						}
+					}
+					
+					/** A High level expand function which will expand all the DIVs in HTML body 
+					**/
+					expandAllTables = function(event)
+					{
+						var anchorElement = event.target || event.srcElement;	
+						if (anchorElement)
+						{
+							var anchorHref = anchorElement.href;
+							var uniqueDivId = 	anchorElement.className;
+							var rootImgElem = document.getElementById(uniqueDivId +'img');	
+							if(!gExpandCollapseImagesArray)
+							{
+								gExpandCollapseImagesArray =  new Array();
+							}		
+							if(!gExpandCollapseImagesArray[uniqueDivId])
+							{
+								var divElement = document.getElementById(uniqueDivId);						
+								gExpandCollapseImagesArray[uniqueDivId] = new ImgCollection(divElement.getElementsByTagName("img"));
+							}
+							var expandCollapseImagesArray = gExpandCollapseImagesArray[uniqueDivId].imgArray;
+							for(var i=0; i<expandCollapseImagesArray.length;++i)
+							{
+								var imgElem = expandCollapseImagesArray[i];
+								if (imgElem.className != "trExpanded")
+									expandImageDiv(imgElem);
+							}
+							rootImgElem.src =getImageAbsolutePath("minus.png");
+							expandImageDiv(rootImgElem);		
+							gExpandCollapseImagesArray[uniqueDivId].state = "expanded";
+							window.location.href = anchorHref; 
+						}
+							return false;
+					}	
+
+					expandTable = function(event)
+					{
+						var anchorElement = event.target || event.srcElement;		
+						var anchorHref = anchorElement.href;
+						var indexOfHash = anchorHref.lastIndexOf('#');
+						var id = anchorHref.substring(indexOfHash + 1);
+						var tableElement = document.getElementById(id);
+						var parentElement = tableElement.parentNode;
+						while(parentElement.tagName != "BODY")
+						{
+							if(parentElement.tagName=='DIV' && parentElement.className=='collapsed')
+							{
+								var imgElem = parentElement.parentNode.getElementsByTagName("IMG")[0];
+								var imgSrc = imgElem.src;
+								var indexOfLastSlash  = imgSrc.lastIndexOf('/') + 1;
+								var imgPath = imgSrc.slice(0,indexOfLastSlash);
+								var imgName = imgSrc.slice(indexOfLastSlash);
+								parentElement.className="expanded";
+								imgName = imgName.replace("plus","minus");					
+								imgElem.src=imgPath+imgName;
+							}
+							parentElement = parentElement.parentNode;
+						}
+						window.location.href = anchorHref;
+						return false;
+					}
+					
+				/** Functions to expand collapse tr elements **/
+				var kExpandedState = 1;
+				var kCollapsedState = 0;
+				expandCollapseTR = function(event)
+				{
+					var imgElem = event.target || event.srcElement;			 
+					if (imgElem)
+					{
+						expandCollapseTRImg(imgElem);
+					}
+				}
+				expandCollapseTRImg  = function(imgElem)
+				{
+					var trElem	= imgElem.parentNode.parentNode;
+					if(trElem)
+					{
+						var expCollState = getStateFromTRElement(trElem);
+						if (expCollState == kCollapsedState)
+						{
+							expandNestedRows(trElem);
+							setStateOfTR(trElem, kExpandedState);
+							setImageToMinus(imgElem);
+						}
+						else if (expCollState == kExpandedState)
+						{
+							collapseNestedRows(trElem);
+							setStateOfTR(trElem, kCollapsedState);
+							setImageToPlus(imgElem);
+						}
+					}
+				}
+				expandTRImg  = function(imgElem)
+				{
+					var trElem	= imgElem.parentNode.parentNode;
+					if(trElem)
+					{
+						expandNestedRows(trElem);
+						setStateOfTR(trElem, kExpandedState);
+						setImageToMinus(imgElem)
+					}
+				}
+				collapseTRImg  = function(imgElem)
+				{
+					var trElem	= imgElem.parentNode.parentNode;
+					if(trElem)
+					{
+						collapseNestedRows(trElem);
+						setStateOfTR(trElem, kCollapsedState);
+						setImageToMinus(imgElem);
+					}
+				}
+				getStateFromTRElement = function(trElem)
+				{
+					var className = trElem.className;
+					var state = kExpandedState;
+					var splitData = className.split(' ');
+					if(splitData.length >= 3)
+					{
+						state = parseInt(splitData[2].split(':')[1],10)
+					}
+					return state;
+				}
+				getLevelFromTRElement = function(trElem)
+				{
+					var className = trElem.className;
+					var level = -1;
+					var splitData = className.split(' ');
+					if(splitData.length >= 2)
+					{
+						level = parseInt(splitData[1].split(':')[1],10)
+					}
+					return level;
+				}
+				setVisibiltyOfTR = function(trElem, visibility)
+				{
+					var className = trElem.className;
+					var splitData = className.split(' ');
+					if(splitData.length >= 3)
+					{
+						splitData[0] = visibility;
+						trElem.className = splitData.join(' ');
+					}					
+				}
+				setStateOfTR = function(trElem, state)
+				{
+					var className = trElem.className;
+					var splitData = className.split(' ');
+					if(splitData.length >= 3)
+					{
+						splitData[2] = 'state:' + state;
+						trElem.className = splitData.join(' ');
+					}					
+				}
+				setImageToPlus = function(imgElem)
+				{
+					var imgSrc = imgElem.src;
+					var indexOfLastSlash  = imgSrc.lastIndexOf('/') + 1;
+					var imgPath = imgSrc.slice(0,indexOfLastSlash);
+					var imgName = imgSrc.slice(indexOfLastSlash);
+					imgName = imgName.replace("minus","plus");
+					imgElem.src=imgPath+imgName;
+				}
+				setImageToMinus = function(imgElem)
+				{
+					var imgSrc = imgElem.src;
+					var indexOfLastSlash  = imgSrc.lastIndexOf('/') + 1;
+					var imgPath = imgSrc.slice(0,indexOfLastSlash);
+					var imgName = imgSrc.slice(indexOfLastSlash);
+					imgName = imgName.replace("plus","minus");
+					imgElem.src=imgPath+imgName;
+				}
+				collapseNestedRows = function(trElem)
+				{					
+					var currLevel = getLevelFromTRElement(trElem);
+					trElem = trElem.nextSibling;
+					while (trElem)
+					{
+						if (trElem.nodeName == "TR" || trElem.nodeName == "tr")
+						{
+							var nextLevel = getLevelFromTRElement(trElem);
+							if (nextLevel > currLevel)
+								setVisibiltyOfTR(trElem, "hidden");
+							else
+								break;
+						}
+						trElem =  trElem.nextSibling;
+					}
+				}
+				expandNestedRows = function(trElem)
+				{
+					var currLevel = getLevelFromTRElement(trElem);
+					var makeVisible = true;
+					var level = -1;
+					trElem = trElem.nextSibling;
+					while (trElem)
+					{
+						if (trElem.nodeName == "TR" || trElem.nodeName == "tr")
+						{
+							var nextLevel = getLevelFromTRElement(trElem);
+							if (nextLevel > currLevel)
+							{
+								var state = getStateFromTRElement(trElem);
+								if (makeVisible == true)
+								{
+									if (state == kCollapsedState)
+									{
+										level = nextLevel;
+										makeVisible = false;
+									}
+									setVisibiltyOfTR(trElem, "visible");
+								}
+								else if(nextLevel <= level)
+								{
+									level = -1;
+									makeVisible = true;
+									if (state == kCollapsedState)
+									{
+										level = nextLevel;
+										makeVisible = false;
+									}
+									setVisibiltyOfTR(trElem, "visible");
+								}							 
+							}
+							else
+								break;
+						}
+						trElem = trElem.nextSibling;
+					}
+				}
+				//Perform any initialization in this method and add dynamic event handlers here	
+					init = function(path)
+					{																	
+						setStylesheetPath(path);
+					}
+						//</script>
+<link rel="stylesheet" href="file:///C:/Program Files (x86)/National Instruments/TestStand 2022/Components/Models/TestStandModels/GraphControl/TSGraphStyle.css" />
+<script defer type="text/javascript" src="file:///C:/Program Files (x86)/National Instruments/TestStand 2022/Components/Models/TestStandModels/GraphControl/GraphDataLayout.js"></script>
+<script defer type="text/javascript" src="file:///C:/Program Files (x86)/National Instruments/TestStand 2022/Components/Models/TestStandModels/GraphControl/node_modules/jquery/dist/jquery.min.js" ></script>
+<script defer type="text/javascript" src="file:///C:/Program Files (x86)/National Instruments/TestStand 2022/Components/Models/TestStandModels/GraphControl/node_modules/engineering-flot/lib/jquery.event.drag.js" ></script>
+<script defer type="text/javascript" src="file:///C:/Program Files (x86)/National Instruments/TestStand 2022/Components/Models/TestStandModels/GraphControl/node_modules/engineering-flot/lib/jquery.mousewheel.js" ></script>
+<script defer type="text/javascript" src="file:///C:/Program Files (x86)/National Instruments/TestStand 2022/Components/Models/TestStandModels/GraphControl/node_modules/engineering-flot/dist/es5/jquery.flot.js" ></script>
+<script defer type="text/javascript" src="file:///C:/Program Files (x86)/National Instruments/TestStand 2022/Components/Models/TestStandModels/GraphControl/node_modules/flot-cursors-plugin/dist/es5/jquery.flot.cursors.js" ></script>
+<script defer type="text/javascript" src="file:///C:/Program Files (x86)/National Instruments/TestStand 2022/Components/Models/TestStandModels/GraphControl/node_modules/ni-data-types/dist/es5-minified/ni-data-types.min.js" ></script>
+<script defer type="text/javascript" src="file:///C:/Program Files (x86)/National Instruments/TestStand 2022/Components/Models/TestStandModels/GraphControl/node_modules/flot-charting-plugin/dist/es5/jquery.flot.charting.js" ></script>
+<script defer type="text/javascript" src="file:///C:/Program Files (x86)/National Instruments/TestStand 2022/Components/Models/TestStandModels/GraphControl/node_modules/flot-intensitygraph-plugin/jquery.flot.intensitygraph.js" ></script>
+<script defer type="text/javascript" src="file:///C:/Program Files (x86)/National Instruments/TestStand 2022/Components/Models/TestStandModels/GraphControl/node_modules/three/build/three.min.js" ></script>
+<script defer type="text/javascript" src="file:///C:/Program Files (x86)/National Instruments/TestStand 2022/Components/Models/TestStandModels/GraphControl/node_modules/flot-glplotter-plugin/jquery.flot.glplotter.js" ></script>
+<script defer type="text/javascript" src="file:///C:/Program Files (x86)/National Instruments/TestStand 2022/Components/Models/TestStandModels/GraphControl/node_modules/webcomponents-lite/webcomponents-lite.js" ></script>
+<script defer type="text/javascript" src="file:///C:/Program Files (x86)/National Instruments/TestStand 2022/Components/Models/TestStandModels/GraphControl/node_modules/@jqwidgets/jqx-element/source-minified/jqxelement-polyfills.js" ></script>
+<script defer type="text/javascript" src="file:///C:/Program Files (x86)/National Instruments/TestStand 2022/Components/Models/TestStandModels/GraphControl/node_modules/@jqwidgets/jqx-element/source-minified/jqxelement.js" ></script>
+<script defer type="text/javascript" src="file:///C:/Program Files (x86)/National Instruments/TestStand 2022/Components/Models/TestStandModels/GraphControl/node_modules/ni-webcharts/dist/es5-minified/element.min.js" ></script>
+<script defer type="text/javascript" src="file:///C:/Program Files (x86)/National Instruments/TestStand 2022/Components/Models/TestStandModels/GraphControl/node_modules/ni-webcharts/dist/es5-minified/webcharts.min.js" ></script>
+<script defer type="text/javascript" src="file:///C:/Program Files (x86)/National Instruments/TestStand 2022/Components/Models/TestStandModels/GraphControl/node_modules/ni-webcharts-legends/dist/es5-minified/webcharts-legends.min.js" ></script>
+<script defer type="text/javascript" src="file:///C:/Program Files (x86)/National Instruments/TestStand 2022/Components/Models/TestStandModels/GraphControl/node_modules/ni-webcharts/dist/es5-minified/element_registration.min.js" ></script>
+</head><body onload=" init('C:/Program Files (x86)/National Instruments/TestStand 2022/Components/Models/TestStandModels/ATML/StyleSheets/');"><h2 style="font-weight:normal;">UUT REPORT</h2><table class="uutTable"><tr><td style="font-weight:normal;">STATION ID</td><td>0952DENG009</td></tr><tr><td style="font-weight:normal;">SERIAL NUMBER</td><td>NONE</td></tr><tr><td style="font-weight:normal;">DATE</td><td>Friday, April 19, 2024</td></tr><tr><td style="font-weight:normal;">TIME</td><td>2:46:13 PM</td></tr><tr><td style="font-weight:normal;">OPERATOR</td><td>administrator</td></tr><tr><td style="font-weight:normal;">EXECUTION TIME</td><td>33.2362 seconds						
+						</td></tr><tr><td style="font-weight:normal;">NUMBER OF RESULTS</td><td>97</td></tr><tr><td style="font-weight:normal;">UUT RESULT</td><td style="color:#008000;">Passed</td></tr></table><br><hr class="headerSeparator"><span style="font-size:70%;font-weight:normal;"><img onclick="expandCollapseAll(event)" alt="Expand/Collapse" src="C:/Program Files (x86)/National Instruments/TestStand 2022/Components/Models/TestStandModels/ATML/StyleSheets/minus.png" class="MainSequence_IDLIWV52AUTOD1PZMDJWM3XGCWLTGYVIEQEMG3F51TXKTAGCMVDF" id="MainSequence_IDLIWV52AUTOD1PZMDJWM3XGCWLTGYVIEQEMG3F51TXKTAGCMVDFimg"/>
+				Expand / Collapse MainSequence
+				</span><br><br><div class="expanded" id="MainSequence_IDLIWV52AUTOD1PZMDJWM3XGCWLTGYVIEQEMG3F51TXKTAGCMVDF"><span style="margin-left:20px;font-size:70%;font-weight:normal;">
+			Begin Sequence: MainSequence
+			</span><br><span style="margin-left:20px;font-size:70%;font-weight:normal;">C:\Elatch-Bench-Test\Sequence\Elatch-bench.seq</span><br><br><table  class="stepTable" style="margin-left:20px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId6703"></a>Close DAQ Short</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId6704"></a>DAQ Resistor Open</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId6705"></a><img onclick="expandCollapse(event)" alt="Expand/Collapse" src="C:/Program Files (x86)/National Instruments/TestStand 2022/Components/Models/TestStandModels/ATML/StyleSheets/minus.png" class="IDXTWREST14BUFNLUSRIWATJROQGCV0ALIWFIH3DEYAO1RAGJRG0GP"/>UUT_PowerON</td><td style="color:#008000;text-align:center;">Passed</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br><div class="expanded" id="IDXTWREST14BUFNLUSRIWATJROQGCV0ALIWFIH3DEYAO1RAGJRG0GP"><span style="margin-left:60px;font-size:70%;font-weight:normal;">Begin Sequence: PS_SetVoltage</span><br><span style="margin-left:60px;font-size:70%;font-weight:normal;">C:\Elatch-Bench-Test\Sequence\Elatch-bench.seq</span><br><br><table  class="stepTable" style="margin-left:60px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId6706"></a>Set_Power_Supply</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId6707"></a>Wait</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId6708"></a>Voltage_Validation</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:right;">8.996</td><td>V</td><td></td><td style="text-align:right;">8.8</td><td style="text-align:right;">9.2</td><td style="text-align:center;">GELE(>= <=)</td></tr></table><br><span style="margin-left:60px;font-size:70%;font-weight:normal;">End Sequence: PS_SetVoltage</span><br><br></div><table  class="stepTable" style="margin-left:20px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId6709"></a>Current_Validation</td><td style="color:#B98028;text-align:center;">Skipped</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td style="padding-left:15px;">Number of Loops</td><td colspan="7;">0</td></tr><tr><td style="padding-left:15px;">Number of Passes</td><td colspan="7;">0</td></tr><tr><td style="padding-left:15px;">Number of Failures</td><td colspan="7;">0</td></tr><tr><td style="padding-left:15px;">Final Loop Index</td><td colspan="7;">0</td></tr><tr><td style="padding-left:15px;">Current_Validation (Loop Indices)
+				</td></tr><tr><td><a name="ResultId6710"></a>Test Brose EOL Ext Session</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:left;">065061003201F4</td><td></td><td></td><td style="text-align:right;">065061003201F4</td><td></td><td style="text-align:center;">IgnoreCase</td></tr><tr class="visible level:1 state:1"><td colspan="8" style="padding-left:15px;">Parameters</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">CAN Command</td><td colspan="7">021061</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">ID Response</td><td colspan="7">18DAF254</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">ID Request</td><td colspan="7">18DA54F2</td></tr><tr class="visible level:1 state:1"><td colspan="8" style="font-weight:500;padding-left:15px;">TestResults/Data</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">ID String</td><td colspan="7">18DAF254</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Data String</td><td colspan="7">065061003201F4</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Timestamp</td><td colspan="7">4/19/2024&nbsp;2:46:15.064&nbsp;PM</td></tr><tr class="visible level:2 state:0"><td style="vertical-align:top;padding-left:12px;" colspan="8"><img alt="" src="C:/Program Files (x86)/National Instruments/TestStand 2022/Components/Models/TestStandModels/ATML/StyleSheets/plus.png" onclick="expandCollapseTR(event)" class="trExpanded"/>Error Out</td></tr><tr class="hidden level:3 state:1"><td style="vertical-align:top;  padding-left:45px;">Code</td><td colspan="7">0</td></tr><tr class="hidden level:3 state:1"><td style="vertical-align:top;  padding-left:45px;">Msg</td><td colspan="7">''</td></tr><tr class="hidden level:3 state:1"><td style="vertical-align:top;  padding-left:45px;">Occurred</td><td colspan="7">False</td></tr><tr><td><a name="ResultId6711"></a>Test Request Seed</td><td style="color:#B98028;text-align:center;">Skipped</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId6712"></a>Test NTC Measurement</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:left;">''</td><td></td><td></td><td></td><td></td><td style="text-align:center;">LOG</td></tr><tr class="visible level:1 state:1"><td colspan="8" style="padding-left:15px;">Parameters</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">CAN Command</td><td colspan="7">053101FE3206</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">ID Response</td><td colspan="7">18DAF254</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">ID Request</td><td colspan="7">18DA54F2</td></tr><tr class="visible level:1 state:1"><td colspan="8" style="font-weight:500;padding-left:15px;">TestResults/Data</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">ID String</td><td colspan="7">18DAF254</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Data String</td><td colspan="7">000B7101FE3206067500000000FFFFFF</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Timestamp</td><td colspan="7">4/19/2024&nbsp;2:46:15.081&nbsp;PM</td></tr><tr><td><a name="ResultId6713"></a>NTC Convertor</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr class="visible level:1 state:1"><td colspan="8" style="padding-left:15px;">Parameters</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">Measurement</td><td colspan="7">000B7101FE3206067500000000FFFFFF</td></tr><tr class="visible level:1 state:1"><td colspan="8" style="font-weight:500;padding-left:15px;">TestResults/Data</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Value</td><td colspan="7">1653</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Temp</td><td colspan="7">27.87585736173</td></tr><tr><td><a name="ResultId6714"></a><img onclick="expandCollapse(event)" alt="Expand/Collapse" src="C:/Program Files (x86)/National Instruments/TestStand 2022/Components/Models/TestStandModels/ATML/StyleSheets/minus.png" class="ID0QPTTIYHTIZIJJGQEH5B2TYLHDVL3P4AYHY3XNIQGNBN25KP1HOP"/>If{True}</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br><div  class="expanded" id="ID0QPTTIYHTIZIJJGQEH5B2TYLHDVL3P4AYHY3XNIQGNBN25KP1HOP"><table  class="stepTable" style="margin-left:60px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId6715"></a>Test Verify SW Version</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:left;">000A62FD22B41069FFFFFFFF</td><td></td><td></td><td style="text-align:right;">000A62FD22B41069FFFFFFFF</td><td></td><td style="text-align:center;">IgnoreCase</td></tr><tr class="visible level:1 state:1"><td colspan="8" style="padding-left:15px;">Parameters</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">CAN Command</td><td colspan="7">0322FD22</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">ID Response</td><td colspan="7">18DAF254</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">ID Request</td><td colspan="7">18DA54F2</td></tr><tr class="visible level:1 state:1"><td colspan="8" style="font-weight:500;padding-left:15px;">TestResults/Data</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">ID String</td><td colspan="7">18DAF254</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Data String</td><td colspan="7">000A62FD22B41069FFFFFFFF</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Timestamp</td><td colspan="7">4/19/2024&nbsp;2:46:15.106&nbsp;PM</td></tr><tr><td><a name="ResultId6716"></a>Verify SW Version String</td><td style="color:#B98028;text-align:center;">Skipped</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId6717"></a>Test Verify ECU ID</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:left;">003362FD28011809004156494E4254B41069FFFFFFFF00000000000000000047353939363730312000000000000000000000000000FFFFFFFFFFFFFFFFFFFFFF</td><td></td><td></td><td style="text-align:right;">003362FD28011809004156494E4254B41069FFFFFFFF00000000000000000047353939363730312000000000000000000000000000FFFFFFFFFFFFFFFFFFFFFF</td><td></td><td style="text-align:center;">IgnoreCase</td></tr><tr class="visible level:1 state:1"><td colspan="8" style="padding-left:15px;">Parameters</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">CAN Command</td><td colspan="7">0322FD28</td></tr><tr class="visible level:1 state:1"><td colspan="8" style="font-weight:500;padding-left:15px;">TestResults/Data</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">ID String</td><td colspan="7">18DAF254</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Data String</td><td colspan="7">003362FD28011809004156494E4254B41069FFFFFFFF00000000000000000047353939363730312000000000000000000000000000FFFFFFFFFFFFFFFFFFFFFF</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Timestamp</td><td colspan="7">4/19/2024&nbsp;2:46:15.121&nbsp;PM</td></tr><tr><td><a name="ResultId6718"></a>Test Read Data By ID</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:left;">002B62FD4000000000000000000000000000000000000000000000000000000000000000000000000000000000FFFFFF</td><td></td><td></td><td style="text-align:right;">002B62FD4000000000000000000000000000000000000000000000000000000000000000000000000000000000FFFFFF</td><td></td><td style="text-align:center;">IgnoreCase</td></tr><tr class="visible level:1 state:1"><td colspan="8" style="padding-left:15px;">Parameters</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">CAN Command</td><td colspan="7">0322FD40</td></tr><tr class="visible level:1 state:1"><td colspan="8" style="font-weight:500;padding-left:15px;">TestResults/Data</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">ID String</td><td colspan="7">18DAF254</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Data String</td><td colspan="7">002B62FD4000000000000000000000000000000000000000000000000000000000000000000000000000000000FFFFFF</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Timestamp</td><td colspan="7">4/19/2024&nbsp;2:46:15.136&nbsp;PM</td></tr><tr><td><a name="ResultId6719"></a>Wake Current Measurement</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:right;">0.0857</td><td>I</td><td></td><td style="text-align:right;">0.03</td><td style="text-align:right;">0.09</td><td style="text-align:center;">GELE(>= <=)</td></tr><tr><td><a name="ResultId6720"></a>Test Self BIST</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:left;">067101FE2AAAFF</td><td></td><td></td><td style="text-align:right;">067101FE2AAAFF</td><td></td><td style="text-align:center;">IgnoreCase</td></tr><tr class="visible level:1 state:1"><td colspan="8" style="padding-left:15px;">Parameters</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">CAN Command</td><td colspan="7">063101FE2A0000</td></tr><tr class="visible level:1 state:1"><td colspan="8" style="font-weight:500;padding-left:15px;">TestResults/Data</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">ID String</td><td colspan="7">18DAF254</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Data String</td><td colspan="7">067101FE2AAAFF</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Timestamp</td><td colspan="7">4/19/2024&nbsp;2:46:15.181&nbsp;PM</td></tr><tr><td><a name="ResultId6721"></a>Wait</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId6722"></a><img onclick="expandCollapse(event)" alt="Expand/Collapse" src="C:/Program Files (x86)/National Instruments/TestStand 2022/Components/Models/TestStandModels/ATML/StyleSheets/minus.png" class="IDDOVR3BWRHZVOKZTC4NIP0IKNJCNN4EPFKXQLPRONJTAAWR51GW3M"/>Set 12V</td><td style="color:#008000;text-align:center;">Passed</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br><div class="expanded" id="IDDOVR3BWRHZVOKZTC4NIP0IKNJCNN4EPFKXQLPRONJTAAWR51GW3M"><span style="margin-left:100px;font-size:70%;font-weight:normal;">Begin Sequence: PS_SetVoltage</span><br><span style="margin-left:100px;font-size:70%;font-weight:normal;">C:\Elatch-Bench-Test\Sequence\Elatch-bench.seq</span><br><br><table  class="stepTable" style="margin-left:100px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId6723"></a>Set_Power_Supply</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId6724"></a>Wait</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId6725"></a>Voltage_Validation</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:right;">12.496</td><td>V</td><td></td><td style="text-align:right;">11.8</td><td style="text-align:right;">15</td><td style="text-align:center;">GELE(>= <=)</td></tr></table><br><span style="margin-left:100px;font-size:70%;font-weight:normal;">End Sequence: PS_SetVoltage</span><br><br></div><table  class="stepTable" style="margin-left:60px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId6726"></a>Wait</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId6727"></a>Test Supply Voltage ADC</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:left;">18DAF254</td><td></td><td></td><td style="text-align:right;">18DAF254</td><td></td><td style="text-align:center;">IgnoreCase</td></tr><tr class="visible level:1 state:1"><td colspan="8" style="padding-left:15px;">Parameters</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">CAN Command</td><td colspan="7">053101FE3200</td></tr><tr class="visible level:1 state:1"><td colspan="8" style="font-weight:500;padding-left:15px;">TestResults/Data</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">ID String</td><td colspan="7">18DAF254</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Data String</td><td colspan="7">000B7101FE3200303500000000FFFFFF</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Timestamp</td><td colspan="7">4/19/2024&nbsp;2:46:16.548&nbsp;PM</td></tr><tr><td><a name="ResultId6728"></a>ADC Convertor</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr class="visible level:1 state:1"><td colspan="8" style="padding-left:15px;">Parameters</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">Measurement</td><td colspan="7">000B7101FE3200303500000000FFFFFF</td></tr><tr class="visible level:1 state:1"><td colspan="8" style="font-weight:500;padding-left:15px;">TestResults/Data</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Value</td><td colspan="7">12.341</td></tr><tr><td><a name="ResultId6729"></a>Voltage_Validation</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:right;">12.497</td><td>V</td><td></td><td style="text-align:right;">11.8</td><td style="text-align:right;">15</td><td style="text-align:center;">GELE(>= <=)</td></tr><tr class="visible level:1 state:1"><td colspan="8" style="font-weight:500;padding-left:15px;">TestResults/Data</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Measurement</td><td colspan="7">12.497</td></tr><tr><td><a name="ResultId6730"></a>Test Switch Input I</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:left;">00097101FE300044551500FF</td><td></td><td></td><td></td><td></td><td style="text-align:center;">LOG</td></tr><tr class="visible level:1 state:1"><td colspan="8" style="padding-left:15px;">Parameters</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">CAN Command</td><td colspan="7">053101FE3000</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">ID Response</td><td colspan="7">18DAF254</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">ID Request</td><td colspan="7">18DA54F2</td></tr><tr class="visible level:1 state:1"><td colspan="8" style="font-weight:500;padding-left:15px;">TestResults/Data</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">ID String</td><td colspan="7">18DAF254</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Data String</td><td colspan="7">00097101FE300044551500FF</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Timestamp</td><td colspan="7">4/19/2024&nbsp;2:46:16.599&nbsp;PM</td></tr><tr><td><a name="ResultId6731"></a>DAQ Switch OBH Close</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId6732"></a>Wait</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId6733"></a>Test Switch Input II</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:left;">00097101FE300041551500FF</td><td></td><td></td><td></td><td></td><td style="text-align:center;">LOG</td></tr><tr class="visible level:1 state:1"><td colspan="8" style="padding-left:15px;">Parameters</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">CAN Command</td><td colspan="7">053101FE3000</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">ID Response</td><td colspan="7">18DAF254</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">ID Request</td><td colspan="7">18DA54F2</td></tr><tr class="visible level:1 state:1"><td colspan="8" style="font-weight:500;padding-left:15px;">TestResults/Data</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">ID String</td><td colspan="7">18DAF254</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Data String</td><td colspan="7">00097101FE300041551500FF</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Timestamp</td><td colspan="7">4/19/2024&nbsp;2:46:17.122&nbsp;PM</td></tr><tr><td><a name="ResultId6734"></a>DAQ Switch OBH Open</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId6735"></a>Wait</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId6736"></a>Test Switch Input III</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:left;">00097101FE300044551500FF</td><td></td><td></td><td></td><td></td><td style="text-align:center;">LOG</td></tr><tr class="visible level:1 state:1"><td colspan="8" style="padding-left:15px;">Parameters</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">CAN Command</td><td colspan="7">053101FE3000</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">ID Response</td><td colspan="7">18DAF254</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">ID Request</td><td colspan="7">18DA54F2</td></tr><tr class="visible level:1 state:1"><td colspan="8" style="font-weight:500;padding-left:15px;">TestResults/Data</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">ID String</td><td colspan="7">18DAF254</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Data String</td><td colspan="7">00097101FE300044551500FF</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Timestamp</td><td colspan="7">4/19/2024&nbsp;2:46:17.651&nbsp;PM</td></tr><tr><td><a name="ResultId6737"></a>DAQ Switch IBH Close</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId6738"></a>Wait</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId6739"></a>Test Switch Input IV</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:left;">00097101FE300014551500FF</td><td></td><td></td><td></td><td></td><td style="text-align:center;">LOG</td></tr><tr class="visible level:1 state:1"><td colspan="8" style="padding-left:15px;">Parameters</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">CAN Command</td><td colspan="7">053101FE3000</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">ID Response</td><td colspan="7">18DAF254</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">ID Request</td><td colspan="7">18DA54F2</td></tr><tr class="visible level:1 state:1"><td colspan="8" style="font-weight:500;padding-left:15px;">TestResults/Data</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">ID String</td><td colspan="7">18DAF254</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Data String</td><td colspan="7">00097101FE300014551500FF</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Timestamp</td><td colspan="7">4/19/2024&nbsp;2:46:18.175&nbsp;PM</td></tr><tr><td><a name="ResultId6740"></a>DAQ Switch IBH Open</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId6741"></a>Wait</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId6742"></a>Test Read Supercap 0</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:left;">000B7101FE3201000000000000FFFFFF</td><td></td><td></td><td></td><td></td><td style="text-align:center;">LOG</td></tr><tr class="visible level:1 state:1"><td colspan="8" style="padding-left:15px;">Parameters</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">CAN Command</td><td colspan="7">053101FE3201</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">ID Response</td><td colspan="7">18DAF254</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">ID Request</td><td colspan="7">18DA54F2</td></tr><tr class="visible level:1 state:1"><td colspan="8" style="font-weight:500;padding-left:15px;">TestResults/Data</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">ID String</td><td colspan="7">18DAF254</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Data String</td><td colspan="7">000B7101FE3201000000000000FFFFFF</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Timestamp</td><td colspan="7">4/19/2024&nbsp;2:46:18.704&nbsp;PM</td></tr><tr><td><a name="ResultId6743"></a>Test Charge Supercap I</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:left;">00097101FE520100280000FF</td><td></td><td></td><td></td><td></td><td style="text-align:center;">LOG</td></tr><tr class="visible level:1 state:1"><td colspan="8" style="padding-left:15px;">Parameters</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">CAN Command</td><td colspan="7">063101FE520028</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">ID Response</td><td colspan="7">18DAF254</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">ID Request</td><td colspan="7">18DA54F2</td></tr><tr class="visible level:1 state:1"><td colspan="8" style="font-weight:500;padding-left:15px;">TestResults/Data</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">ID String</td><td colspan="7">18DAF254</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Data String</td><td colspan="7">00097101FE520100280000FF</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Timestamp</td><td colspan="7">4/19/2024&nbsp;2:46:18.714&nbsp;PM</td></tr><tr><td><a name="ResultId6744"></a>Wait</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId6745"></a>Test Read Supercap I</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:left;">000B7101FE3201000100000000FFFFFF</td><td></td><td></td><td></td><td></td><td style="text-align:center;">LOG</td></tr><tr class="visible level:1 state:1"><td colspan="8" style="padding-left:15px;">Parameters</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">CAN Command</td><td colspan="7">053101FE3201</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">ID Response</td><td colspan="7">18DAF254</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">ID Request</td><td colspan="7">18DA54F2</td></tr><tr class="visible level:1 state:1"><td colspan="8" style="font-weight:500;padding-left:15px;">TestResults/Data</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">ID String</td><td colspan="7">18DAF254</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Data String</td><td colspan="7">000B7101FE3201000100000000FFFFFF</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Timestamp</td><td colspan="7">4/19/2024&nbsp;2:46:20.737&nbsp;PM</td></tr><tr><td><a name="ResultId6746"></a>Wait</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId6747"></a>Test Read Supercap II</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:left;">000B7101FE3201000100000000FFFFFF</td><td></td><td></td><td></td><td></td><td style="text-align:center;">LOG</td></tr><tr class="visible level:1 state:1"><td colspan="8" style="padding-left:15px;">Parameters</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">CAN Command</td><td colspan="7">053101FE3201</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">ID Response</td><td colspan="7">18DAF254</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">ID Request</td><td colspan="7">18DA54F2</td></tr><tr class="visible level:1 state:1"><td colspan="8" style="font-weight:500;padding-left:15px;">TestResults/Data</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">ID String</td><td colspan="7">18DAF254</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Data String</td><td colspan="7">000B7101FE3201000100000000FFFFFF</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Timestamp</td><td colspan="7">4/19/2024&nbsp;2:46:22.768&nbsp;PM</td></tr><tr><td><a name="ResultId6748"></a>Wait</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId6749"></a>Test Read Supercap III</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:left;">000B7101FE3201000000000000FFFFFF</td><td></td><td></td><td></td><td></td><td style="text-align:center;">LOG</td></tr><tr class="visible level:1 state:1"><td colspan="8" style="padding-left:15px;">Parameters</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">CAN Command</td><td colspan="7">053101FE3201</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">ID Response</td><td colspan="7">18DAF254</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">ID Request</td><td colspan="7">18DA54F2</td></tr><tr class="visible level:1 state:1"><td colspan="8" style="font-weight:500;padding-left:15px;">TestResults/Data</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">ID String</td><td colspan="7">18DAF254</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Data String</td><td colspan="7">000B7101FE3201000000000000FFFFFF</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Timestamp</td><td colspan="7">4/19/2024&nbsp;2:46:26.786&nbsp;PM</td></tr><tr><td><a name="ResultId6750"></a>Test Stop Charge Supercap</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:left;">00097101FE520400000000FF</td><td></td><td></td><td></td><td></td><td style="text-align:center;">LOG</td></tr><tr class="visible level:1 state:1"><td colspan="8" style="padding-left:15px;">Parameters</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">CAN Command</td><td colspan="7">063101FE520000</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">ID Response</td><td colspan="7">18DAF254</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">ID Request</td><td colspan="7">18DA54F2</td></tr><tr class="visible level:1 state:1"><td colspan="8" style="font-weight:500;padding-left:15px;">TestResults/Data</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">ID String</td><td colspan="7">18DAF254</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Data String</td><td colspan="7">00097101FE520400000000FF</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Timestamp</td><td colspan="7">4/19/2024&nbsp;2:46:26.796&nbsp;PM</td></tr><tr><td><a name="ResultId6751"></a>Init short</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId6752"></a>Not Sleep Command</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId6753"></a>Not Sleep Command</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId6754"></a>Delete short</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId6755"></a>Test Read Supercap IV</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:left;">000B7101FE3201000000000000FFFFFF</td><td></td><td></td><td></td><td></td><td style="text-align:center;">LOG</td></tr><tr class="visible level:1 state:1"><td colspan="8" style="padding-left:15px;">Parameters</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">CAN Command</td><td colspan="7">053101FE3201</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">ID Response</td><td colspan="7">18DAF254</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">ID Request</td><td colspan="7">18DA54F2</td></tr><tr class="visible level:1 state:1"><td colspan="8" style="font-weight:500;padding-left:15px;">TestResults/Data</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">ID String</td><td colspan="7">18DAF254</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Data String</td><td colspan="7">000B7101FE3201000000000000FFFFFF</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Timestamp</td><td colspan="7">4/19/2024&nbsp;2:46:35.863&nbsp;PM</td></tr><tr><td><a name="ResultId6756"></a>Test Compare charge</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr class="visible level:1 state:1"><td colspan="8" style="font-weight:500;padding-left:15px;">TestResults/Data</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Supercap Read III</td><td colspan="7">0</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Supercap Read I</td><td colspan="7">1</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Supercap Read 0</td><td colspan="7">0</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Supercap Read II</td><td colspan="7">1</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Supercap Read IV</td><td colspan="7">0</td></tr><tr><td><a name="ResultId6757"></a>DAQ Resistor Close</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId6758"></a>Motor Control Command</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:left;">067101FE4200F0</td><td></td><td></td><td></td><td></td><td style="text-align:center;">LOG</td></tr><tr class="visible level:1 state:1"><td colspan="8" style="padding-left:15px;">Parameters</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">CAN Command</td><td colspan="7">000A3101FE420010FFFFFFFF</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">ID Response</td><td colspan="7">18DAF254</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">ID Request</td><td colspan="7">18DA54F2</td></tr><tr class="visible level:1 state:1"><td colspan="8" style="font-weight:500;padding-left:15px;">TestResults/Data</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">ID String</td><td colspan="7">18DAF254</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Data String</td><td colspan="7">067101FE4200F0</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Timestamp</td><td colspan="7">4/19/2024&nbsp;2:46:35.893&nbsp;PM</td></tr><tr><td><a name="ResultId6759"></a>Test Start Motor Open</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:left;">000B7101FE4300107FFFFFFF01FFFFFF</td><td></td><td></td><td></td><td></td><td style="text-align:center;">LOG</td></tr><tr class="visible level:1 state:1"><td colspan="8" style="padding-left:15px;">Parameters</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">CAN Command</td><td colspan="7">000A3101FE43007FFFFFFFFF</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">ID Response</td><td colspan="7">18DAF254</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">ID Request</td><td colspan="7">18DA54F2</td></tr><tr class="visible level:1 state:1"><td colspan="8" style="font-weight:500;padding-left:15px;">TestResults/Data</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">ID String</td><td colspan="7">18DAF254</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Data String</td><td colspan="7">000B7101FE4300107FFFFFFF01FFFFFF</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Timestamp</td><td colspan="7">4/19/2024&nbsp;2:46:35.908&nbsp;PM</td></tr><tr><td><a name="ResultId6760"></a>Wait</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId6761"></a>Test Read Current</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:left;">000B7101FE32302DBE2E04046DFFFFFF</td><td></td><td></td><td></td><td></td><td style="text-align:center;">LOG</td></tr><tr class="visible level:1 state:1"><td colspan="8" style="padding-left:15px;">Parameters</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">CAN Command</td><td colspan="7">053101FE3230</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">ID Response</td><td colspan="7">18DAF254</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">ID Request</td><td colspan="7">18DA54F2</td></tr><tr class="visible level:1 state:1"><td colspan="8" style="font-weight:500;padding-left:15px;">TestResults/Data</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">ID String</td><td colspan="7">18DAF254</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Data String</td><td colspan="7">000B7101FE32302DBE2E04046DFFFFFF</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Timestamp</td><td colspan="7">4/19/2024&nbsp;2:46:36.422&nbsp;PM</td></tr><tr><td><a name="ResultId6762"></a>Test Stop Motor Open</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:left;">037F3112</td><td></td><td></td><td></td><td></td><td style="text-align:center;">LOG</td></tr><tr class="visible level:1 state:1"><td colspan="8" style="padding-left:15px;">Parameters</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">CAN Command</td><td colspan="7">000A3102FE43007FFFFFFFFF</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">ID Response</td><td colspan="7">18DAF254</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">ID Request</td><td colspan="7">18DA54F2</td></tr><tr class="visible level:1 state:1"><td colspan="8" style="font-weight:500;padding-left:15px;">TestResults/Data</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">ID String</td><td colspan="7">18DAF254</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Data String</td><td colspan="7">037F3112</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Timestamp</td><td colspan="7">4/19/2024&nbsp;2:46:36.431&nbsp;PM</td></tr><tr><td><a name="ResultId6763"></a>Test Start Motor Close</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:left;">000B7101FE4300108000FFFF02FFFFFF</td><td></td><td></td><td></td><td></td><td style="text-align:center;">LOG</td></tr><tr class="visible level:1 state:1"><td colspan="8" style="padding-left:15px;">Parameters</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">CAN Command</td><td colspan="7">000A3101FE43008000FFFFFF</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">ID Response</td><td colspan="7">18DAF254</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">ID Request</td><td colspan="7">18DA54F2</td></tr><tr class="visible level:1 state:1"><td colspan="8" style="font-weight:500;padding-left:15px;">TestResults/Data</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">ID String</td><td colspan="7">18DAF254</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Data String</td><td colspan="7">000B7101FE4300108000FFFF02FFFFFF</td></tr><tr><td><a name="ResultId6764"></a>Wait</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId6765"></a>Test Read Current</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:left;">000B7101FE323000532E990290FFFFFF</td><td></td><td></td><td></td><td></td><td style="text-align:center;">LOG</td></tr><tr class="visible level:1 state:1"><td colspan="8" style="padding-left:15px;">Parameters</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">CAN Command</td><td colspan="7">053101FE3230</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">ID Response</td><td colspan="7">18DAF254</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">ID Request</td><td colspan="7">18DA54F2</td></tr><tr class="visible level:1 state:1"><td colspan="8" style="font-weight:500;padding-left:15px;">TestResults/Data</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">ID String</td><td colspan="7">18DAF254</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Data String</td><td colspan="7">000B7101FE323000532E990290FFFFFF</td></tr><tr><td><a name="ResultId6766"></a>Test Stop Motor Close</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:left;">037F3112</td><td></td><td></td><td></td><td></td><td style="text-align:center;">LOG</td></tr><tr class="visible level:1 state:1"><td colspan="8" style="padding-left:15px;">Parameters</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">CAN Command</td><td colspan="7">000A3102FE43008000FFFFFF</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">ID Response</td><td colspan="7">18DAF254</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">ID Request</td><td colspan="7">18DA54F2</td></tr><tr class="visible level:1 state:1"><td colspan="8" style="font-weight:500;padding-left:15px;">TestResults/Data</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">ID String</td><td colspan="7">18DAF254</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Data String</td><td colspan="7">037F3112</td></tr><tr><td><a name="ResultId6767"></a>DAQ Resistor Open</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId6768"></a>Wait 1 sec</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId6769"></a>Test Hall Test 1</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:left;">18DAF254</td><td></td><td></td><td style="text-align:right;">18DAF254</td><td></td><td style="text-align:center;">IgnoreCase</td></tr><tr class="visible level:1 state:1"><td colspan="8" style="padding-left:15px;">Parameters</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">CAN Command</td><td colspan="7">053101FE3000</td></tr><tr class="visible level:1 state:1"><td colspan="8" style="font-weight:500;padding-left:15px;">TestResults/Data</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">ID String</td><td colspan="7">18DAF254</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Data String</td><td colspan="7">00097101FE300044551500FF</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Timestamp</td><td colspan="7">4/19/2024&nbsp;2:46:38.019&nbsp;PM</td></tr><tr><td><a name="ResultId6770"></a>Wait 1 sec</td><td style="color:#B98028;text-align:center;">Skipped</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId6771"></a>Test Hall Test 2</td><td style="color:#B98028;text-align:center;">Skipped</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId6772"></a>Wait 1 sec</td><td style="color:#B98028;text-align:center;">Skipped</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId6773"></a>Test Hall Test 3</td><td style="color:#B98028;text-align:center;">Skipped</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId6774"></a>DAQ Passive Lock Close</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId6775"></a>Wait</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId6776"></a>Test Digital Input</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:left;">00097101FE300044551500FF</td><td></td><td></td><td></td><td></td><td style="text-align:center;">LOG</td></tr><tr class="visible level:1 state:1"><td colspan="8" style="padding-left:15px;">Parameters</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">CAN Command</td><td colspan="7">053101FE3000</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">ID Response</td><td colspan="7">18DAF254</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">ID Request</td><td colspan="7">18DA54F2</td></tr><tr class="visible level:1 state:1"><td colspan="8" style="font-weight:500;padding-left:15px;">TestResults/Data</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">ID String</td><td colspan="7">18DAF254</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Data String</td><td colspan="7">00097101FE300044551500FF</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Timestamp</td><td colspan="7">4/19/2024&nbsp;2:46:38.328&nbsp;PM</td></tr><tr><td style="padding-left:15px;">Number of Loops</td><td colspan="7;">1</td></tr><tr><td style="padding-left:15px;">Number of Passes</td><td colspan="7;">1</td></tr><tr><td style="padding-left:15px;">Number of Failures</td><td colspan="7;">0</td></tr><tr><td style="padding-left:15px;">Final Loop Index</td><td colspan="7;">1</td></tr><tr><td style="padding-left:15px;">Test Digital Input (Loop Indices)
+				</td></tr><tr><td><a name="ResultId6777"></a>DAQ Passive Lock Open</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId6778"></a>Wait</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId6779"></a>DAQ Crash Signal Close</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId6780"></a>Wait</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId6781"></a>Test Digital Input</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:left;">00097101FE300044551500FF</td><td></td><td></td><td></td><td></td><td style="text-align:center;">LOG</td></tr><tr class="visible level:1 state:1"><td colspan="8" style="padding-left:15px;">Parameters</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">CAN Command</td><td colspan="7">053101FE3000</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">ID Response</td><td colspan="7">18DAF254</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">ID Request</td><td colspan="7">18DA54F2</td></tr><tr class="visible level:1 state:1"><td colspan="8" style="font-weight:500;padding-left:15px;">TestResults/Data</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">ID String</td><td colspan="7">18DAF254</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Data String</td><td colspan="7">00097101FE300044551500FF</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Timestamp</td><td colspan="7">4/19/2024&nbsp;2:46:38.877&nbsp;PM</td></tr><tr><td style="padding-left:15px;">Number of Loops</td><td colspan="7;">1</td></tr><tr><td style="padding-left:15px;">Number of Passes</td><td colspan="7;">1</td></tr><tr><td style="padding-left:15px;">Number of Failures</td><td colspan="7;">0</td></tr><tr><td style="padding-left:15px;">Final Loop Index</td><td colspan="7;">1</td></tr><tr><td style="padding-left:15px;">Test Digital Input (Loop Indices)
+				</td></tr><tr><td><a name="ResultId6782"></a>DAQ Crash Signal Open</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId6783"></a>Test Program SBC</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:left;">057101FE5300</td><td></td><td></td><td style="text-align:right;">057101FE5300</td><td></td><td style="text-align:center;">IgnoreCase</td></tr><tr class="visible level:1 state:1"><td colspan="8" style="padding-left:15px;">Parameters</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">CAN Command</td><td colspan="7">053101FE5301</td></tr><tr class="visible level:1 state:1"><td colspan="8" style="font-weight:500;padding-left:15px;">TestResults/Data</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">ID String</td><td colspan="7">18DAF254</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Data String</td><td colspan="7">057101FE5300</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Timestamp</td><td colspan="7">4/19/2024&nbsp;2:46:38.897&nbsp;PM</td></tr><tr><td><a name="ResultId6784"></a>ECU Hard Reset</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:left;">047101FE20</td><td></td><td></td><td style="text-align:right;">047101FE20</td><td></td><td style="text-align:center;">IgnoreCase</td></tr><tr class="visible level:1 state:1"><td colspan="8" style="padding-left:15px;">Parameters</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">CAN Command</td><td colspan="7">063101FE200100</td></tr><tr class="visible level:1 state:1"><td colspan="8" style="font-weight:500;padding-left:15px;">TestResults/Data</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">ID String</td><td colspan="7">18DAF254</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Data String</td><td colspan="7">047101FE20</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Timestamp</td><td colspan="7">4/19/2024&nbsp;2:46:38.907&nbsp;PM</td></tr><tr><td><a name="ResultId6785"></a>Wait for UUT</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId6786"></a>Test Enter Brose EOL Ext Session</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:left;">065061003201F4</td><td></td><td></td><td style="text-align:right;">065061003201F4</td><td></td><td style="text-align:center;">IgnoreCase</td></tr><tr class="visible level:1 state:1"><td colspan="8" style="padding-left:15px;">Parameters</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">CAN Command</td><td colspan="7">021061</td></tr><tr class="visible level:1 state:1"><td colspan="8" style="font-weight:500;padding-left:15px;">TestResults/Data</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">ID String</td><td colspan="7">18DAF254</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Data String</td><td colspan="7">065061003201F4</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Timestamp</td><td colspan="7">4/19/2024&nbsp;2:46:39.928&nbsp;PM</td></tr><tr><td><a name="ResultId6787"></a>Test Read/Erase DTC</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:left;">037FFE11</td><td></td><td></td><td></td><td></td><td style="text-align:center;">LOG</td></tr><tr class="visible level:1 state:1"><td colspan="8" style="padding-left:15px;">Parameters</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">CAN Command</td><td colspan="7">03FE2B01</td></tr><tr class="visible level:1 state:1"><td colspan="8" style="font-weight:500;padding-left:15px;">TestResults/Data</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">ID String</td><td colspan="7">18DAF254</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Data String</td><td colspan="7">037FFE11</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Timestamp</td><td colspan="7">4/19/2024&nbsp;2:46:39.940&nbsp;PM</td></tr><tr><td><a name="ResultId6788"></a>Test Sleep Request</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:left;">047101FE21</td><td></td><td></td><td style="text-align:right;">047101FE21</td><td></td><td style="text-align:center;">IgnoreCase</td></tr><tr class="visible level:1 state:1"><td colspan="8" style="padding-left:15px;">Parameters</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;padding-left:30px;">CAN Command</td><td colspan="7">063101FE2101FF</td></tr><tr class="visible level:1 state:1"><td colspan="8" style="font-weight:500;padding-left:15px;">TestResults/Data</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">ID String</td><td colspan="7">18DAF254</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Data String</td><td colspan="7">047101FE21</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Timestamp</td><td colspan="7">4/19/2024&nbsp;2:46:39.958&nbsp;PM</td></tr><tr><td><a name="ResultId6789"></a>Wait</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId6790"></a>Sleep Current Measurement</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:right;">0.0797</td><td>I</td><td></td><td style="text-align:right;">0.045</td><td style="text-align:right;">0.12</td><td style="text-align:center;">GELE(>= <=)</td></tr><tr><td><a name="ResultId6791"></a>UUT PowerOFF</td><td style="color:#008000;text-align:center;">Passed</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId6792"></a>Init short</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId6793"></a>Delete short</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId6794"></a>SuperCap Test</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:right;">0.0005196</td><td>V</td><td></td><td style="text-align:right;">0.1</td><td></td><td style="text-align:center;">LT(<)</td></tr><tr class="visible level:1 state:1"><td colspan="8" style="font-weight:500;padding-left:15px;">TestResults/Data</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Measurement</td><td colspan="7">0.0005196</td></tr><tr><td style="padding-left:15px;">Number of Loops</td><td colspan="7;">1</td></tr><tr><td style="padding-left:15px;">Number of Passes</td><td colspan="7;">1</td></tr><tr><td style="padding-left:15px;">Number of Failures</td><td colspan="7;">0</td></tr><tr><td style="padding-left:15px;">Final Loop Index</td><td colspan="7;">1</td></tr><tr><td style="padding-left:15px;">SuperCap Test (Loop Indices)
+				</td></tr><tr><td style="vertical-align:top;padding-left:20px;"><a name="ResultId6795"></a>SuperCap Test (Loop Index:0)</td><td style="color:#008000;text-align:center;">Passed</td><td style="text-align:right;">0.0005196</td><td>V</td><td></td><td style="text-align:right;">0.1</td><td></td><td style="text-align:center;">LT(<)</td></tr><tr class="visible level:1 state:1"><td colspan="8" style="font-weight:500;padding-left:24px;">TestResults/Data</td></tr><tr class="visible level:2 state:1"><td style="vertical-align:top;  padding-left:30px;">Measurement</td><td colspan="7">0.0005196</td></tr></table></div><br><table  class="stepTable" style="margin-left:20px;"><tr><td rowspan="2" valign="bottom" style="text-align:center;" width="30%">
+				STEP
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="6%">
+				STATUS
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="10%">
+				MEASUREMENT
+			</td><td rowspan="2" valign="bottom" style="text-align:center;" width="5%">
+				UNITS
+			</td><td colspan="4" style="text-align:center;" width="33%">
+				LIMITS
+			</td></tr><tr><td width="10%" style="text-align:center;">
+				NOMINAL VALUE
+			</td><td width="14%" style="text-align:center;">
+				LOW LIMIT
+			</td><td width="14%" style="text-align:center;">
+				HIGH LIMIT
+			</td><td width="10%" style="text-align:center; white-space:nowrap;">
+				COMPARISON TYPE
+			</td></tr><tr><td><a name="ResultId6797"></a>End(If)</td><td style="color:#008000;text-align:center;">Done</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId6798"></a>UUT PowerOFF</td><td style="color:#B98028;text-align:center;">Skipped</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId6799"></a>Init short</td><td style="color:#B98028;text-align:center;">Skipped</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><a name="ResultId6800"></a>Delete short</td><td style="color:#B98028;text-align:center;">Skipped</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><br><span style="margin-left:20px;font-size:70%;font-weight:normal;">
+							
+			End Sequence: MainSequence
+			</span></div><h2 style="font-weight:normal;">END UUT REPORT</h2><hr class="uutSeparator"><script type="text/javascript">
+					try {
+						window.cefQuery({
+							request: 'Expand',
+							onSuccess: function(response) {
+							  expandAll();
+							},
+							onFailure: function(error_code, error_message) {expandAll();}
+						});
+						expandAll();
+					}
+					catch (err) {
+						// Do nothing
+					}
+				</script></body></html>
